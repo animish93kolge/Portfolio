@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Principal Dashboard · Animish Kolge</title>
+<meta name="description" content="Designing Teno's Principal Dashboard — a new fifth role that lets school principals see and monitor every school activity, from attendance to academics, in one place. Research, persona, task flow, wireframes, prototype and usability testing.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Animish Kolge — Design Lead">
+<meta property="og:title" content="Principal Dashboard · Animish Kolge">
+<meta property="og:description" content="Designing Teno's Principal Dashboard — a new role that lets school principals monitor every school activity in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Archivo:wght@500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../casestudy.css">
+</head>
+<body>
+<a class="skip" href="#csbody">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">Animish&nbsp;Kolge <span class="num">Design Leader</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#edition">Work</a>
+      <a href="../index.html#profile">Profile</a>
+      <a href="../index.html#toolkit">Toolkit</a>
+      <a href="../index.html#desk">Contact</a>
+      <a href="https://www.animishdesign.com/resume" class="nav-cta">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <a href="../index.html#edition" class="cs-back"><span class="arr">←</span> Back to the edition</a>
+    <div class="cs-round"><span>No. 04</span><span class="flag">Teno · EdTech</span><span>Principal Dashboard</span></div>
+    <h1 class="cs-title">Principal Dashboard</h1>
+    <p class="cs-lede">A new role for <b>school principals</b> inside Teno — one place to see and monitor every school activity, from attendance to academics, instead of chasing it across scattered reports.</p>
+    <div class="cs-board">
+      <div class="cs-board-cell"><div class="k">Role</div><div class="v cyan" style="font-size:1.05rem">Lead Experience Designer<small>research → prototype</small></div></div>
+      <div class="cs-board-cell"><div class="k">Scope</div><div class="v" style="font-size:1.05rem">End-to-end<small>research · UX · UI · prototype</small></div></div>
+      <div class="cs-board-cell"><div class="k">The brief</div><div class="v">New role<small>Teno's 5th user type</small></div></div>
+      <div class="cs-board-cell"><div class="k">Validated with</div><div class="v fast">5<small>usability test users</small></div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="cs-plate">
+    <div class="ph">PROJECT HERO IMAGE<small>drop the Principal Dashboard cover here</small></div>
+  </div>
+
+  <div class="cs-body" id="csbody">
+    <section class="cs-block">
+      <h2><span class="n">01</span>A role that didn't exist yet</h2>
+      <p>Teno already served four roles — <strong>Admin, Teacher, Parent and Student</strong>. The principal was the one person missing, and the one with the widest view of the school: attendance, academics, staff and day-to-day operations all sit on their desk. To stay on top of it, a principal had to piece the picture together from separate reports and screens.</p>
+      <p>The brief was to design that missing fifth role as a single <strong>Principal Dashboard</strong> — a command centre where every school activity is visible and monitorable in one place, on any given day.</p>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">02</span>The objective</h2>
+      <p>A principal carries numerous responsibilities toward school management and has to stay aware of everything happening across the school, every day. Because this was a brand-new role in the product, there was no existing pattern to lean on — the dashboard had to be defined from the ground up, starting from what a principal actually needs to decide and see.</p>
+      <p class="note" style="border-left-color:var(--red)"><b>The question I kept returning to:</b> what does a principal need to know the moment they open the app — and what can wait?</p>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">03</span>Research — who, what and why</h2>
+      <p>I started with strategy, identifying the primary and secondary audiences. Since the principal was a new role, the work began from scratch: I interviewed target users and drew out the initial insights. From those interviews I built an <strong>empathy map</strong> to guide how the role should be shaped — what principals say, think, do and feel about staying on top of their school.</p>
+      <figure class="cs-figure">
+        <div class="ph-fig">EMPATHY MAP<small>drop the empathy-map image here</small></div>
+        <figcaption>Fig. 1 · Empathy map from principal interviews</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">04</span>Feature ideation</h2>
+      <p>With the interviews synthesised, I ran ideation to turn those needs into candidate features for the dashboard — mapping what a principal would want to monitor, and how often, before committing to any layout.</p>
+      <figure class="cs-figure">
+        <div class="ph-fig">FEATURE IDEATION<small>drop the ideation / affinity image here</small></div>
+        <figcaption>Fig. 2 · Feature ideation for the Principal Dashboard</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">05</span>Who we were designing for</h2>
+      <p>From the interviews and empathy mapping, one persona anchored the work: <strong>Rajesh Manohar</strong>.</p>
+      <p>Rajesh has been a principal for four years. He is fully occupied with school-management work and can't find the time to check daily school attendance. What he wants is simple: one place where he can see all the school's attendance, at his own convenience.</p>
+      <figure class="cs-figure">
+        <div class="ph-fig">USER PERSONA · RAJESH MANOHAR<small>drop the persona image here</small></div>
+        <figcaption>Fig. 3 · Primary persona — Rajesh Manohar, Principal</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">06</span>Storyboard</h2>
+      <p>Everything starts with a story. Walking through the persona's scenarios turned an abstract need into a concrete flow, and showed exactly what information the dashboard had to surface. Rajesh's core story: <em>he wants to check Class 7A's student attendance.</em></p>
+      <ol class="cs-oList">
+        <li>He wants to check Class&nbsp;7A attendance.</li>
+        <li>He opens the Teno app.</li>
+        <li>He goes to the attendance section.</li>
+        <li>He selects Class&nbsp;7A.</li>
+        <li>He sees the attendance overview of all its students.</li>
+      </ol>
+      <figure class="cs-figure">
+        <div class="ph-fig">STORYBOARD<small>drop the storyboard image here</small></div>
+        <figcaption>Fig. 4 · Storyboard — checking Class 7A attendance</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">07</span>Task flow</h2>
+      <p>A task analysis let me walk the flow and pin down the key screens needed for a principal to check attendance. Three questions shaped the structure:</p>
+      <ul class="cs-list">
+        <li>How do they see the <strong>average attendance of the whole school?</strong></li>
+        <li>How do they see <strong>class-by-class</strong> attendance?</li>
+        <li>How do they see a particular class's <strong>day-by-day</strong> attendance?</li>
+      </ul>
+      <p>Answering these defined what had to be on the screen, and became the backbone of the wireframes.</p>
+      <figure class="cs-figure">
+        <div class="ph-fig">TASK FLOW<small>drop the task-flow diagram here</small></div>
+        <figcaption>Fig. 5 · Task flow for checking attendance</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">08</span>From sketches to high fidelity</h2>
+      <p>With research, persona, storyboard and task flow in hand, I moved to <strong>low-fidelity sketches</strong> — kept loose and flowing, deliberately light on detail, so I could think about where content falls on the page and iterate quickly.</p>
+      <figure class="cs-figure">
+        <div class="ph-fig">LOW-FIDELITY SKETCHES<small>drop the sketch image here</small></div>
+        <figcaption>Fig. 6 · Low-fidelity sketches — dashboard and attendance layout</figcaption>
+      </figure>
+      <p>After reviewing the sketches with the product team and a couple of iterations, I refined them into a <strong>high-fidelity wireframe</strong>, locking the layout and element placement before committing to visual detail — so the structure could still change cheaply if it needed to.</p>
+      <figure class="cs-figure">
+        <div class="ph-fig">HIGH-FIDELITY WIREFRAME<small>drop the hi-fi wireframe image here</small></div>
+        <figcaption>Fig. 7 · High-fidelity wireframe</figcaption>
+      </figure>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">09</span>Prototype &amp; usability testing</h2>
+      <p>I built a high-fidelity prototype in <strong>Marvel</strong>, set up for usability testing around the core task: checking Class&nbsp;7A attendance. I defined what to test and why, then ran it with <strong>5 participants</strong>.</p>
+      <figure class="cs-figure">
+        <div class="ph-fig">HIGH-FIDELITY PROTOTYPE<small>drop a prototype screen or recording still here</small></div>
+        <figcaption>Fig. 8 · High-fidelity prototype used for testing</figcaption>
+      </figure>
+
+      <h3 class="cs-sub">What the test set out to learn</h3>
+      <ul class="cs-list">
+        <li>How easily users could navigate to complete the task — checking Class&nbsp;7A attendance.</li>
+        <li>How they searched for a particular class's attendance.</li>
+        <li>Whether they could read the data easily in a graphical format.</li>
+        <li>The overall ease of navigating the app.</li>
+        <li>Any frustrations or obstacles that got in the way of finishing the task.</li>
+      </ul>
+
+      <h3 class="cs-sub">What we observed</h3>
+      <div class="cs-table-wrap">
+        <table class="cs-table">
+          <thead><tr><th>Observation</th><th>What it told us</th></tr></thead>
+          <tbody>
+            <tr><th>Task completed easily</th><td>Users had very little trouble finishing the task — the core flow held up.</td></tr>
+            <tr><th>Some text hard to read</th><td>A few labels and values needed better size and contrast.</td></tr>
+            <tr><th>Minor colour-palette concerns</th><td>Small adjustments needed to the palette for clarity and comfort.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">10</span>What I took from it</h2>
+      <ul class="cs-list">
+        <li><strong>Design a role, not just a screen.</strong> With no precedent for the principal, the research and persona work decided the product — the UI followed from it.</li>
+        <li><strong>One real task anchors everything.</strong> "Check Class 7A attendance" kept the storyboard, task flow, wireframes and test all pointed at the same outcome.</li>
+        <li><strong>Readability is a feature.</strong> The test's clearest signal was legibility — text size, contrast and palette — which is exactly where the next iteration went.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<div class="wrap cs-next">
+  <a href="teno-attendance.html">
+    <div><div class="lab">Next story →</div><div class="nm">Teacher Attendance</div></div>
+    <span class="cs-back" style="margin:0"><span class="arr" style="transform:none">→</span></span>
+  </a>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span class="foot-meta">Animish Kolge · The Design Chronicle · © 2026</span>
+    <div class="foot-links">
+      <a href="mailto:animish.kolge@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/animish-kolge">LinkedIn</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

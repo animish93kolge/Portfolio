@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designing for Collisions — B by Lenskart · Animish Kolge</title>
+<meta name="description" content="The interrupt model for B by Lenskart — 27 running states against 29 triggers, roughly 780 decisions distilled into a five-tier priority ladder. A restricted deep-dive.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Design Chronicle — Animish Kolge">
+<meta property="og:title" content="Designing for Collisions — B by Lenskart">
+<meta property="og:description" content="The interrupt model for India's first AI smart glasses — restricted deep-dive.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Archivo:wght@500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../casestudy.css">
+</head>
+<body>
+<a class="skip" href="#csbody">Skip to content</a>
+
+<!-- ============ PASSWORD LOCK ============ -->
+<div class="lock" id="lock">
+  <div class="lock-card">
+    <div class="lock-stamp">Restricted</div>
+    <div class="lock-kicker">The Editor's Desk · Confidential File</div>
+    <h1 class="lock-title">Designing for Collisions</h1>
+    <p class="lock-sub">This is a protected deep-dive into the B by Lenskart interrupt model. Enter the passphrase to unseal the file.</p>
+    <form class="lock-form" id="lockForm" autocomplete="off">
+      <input type="password" id="lockInput" class="lock-input" placeholder="Passphrase" aria-label="Passphrase" autocomplete="off">
+      <button type="submit" class="btn btn-primary">Unseal <span class="arr">→</span></button>
+    </form>
+    <p class="lock-err" id="lockErr" hidden>That passphrase doesn't match. Try again.</p>
+    <a href="smart-glasses.html" class="lock-back">← Back to B by Lenskart</a>
+  </div>
+</div>
+
+<!-- ============ PROTECTED CONTENT ============ -->
+<div class="protected" id="protected" hidden>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">Animish&nbsp;Kolge <span class="num">Design Leader</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#edition">Work</a>
+      <a href="../index.html#profile">Profile</a>
+      <a href="../index.html#toolkit">Toolkit</a>
+      <a href="../index.html#desk">Contact</a>
+      <a href="https://www.animishdesign.com/resume" class="nav-cta">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <a href="smart-glasses.html" class="cs-back"><span class="arr">←</span> Back to B by Lenskart</a>
+    <div class="cs-round"><span>No. 06 · Deep Dive</span><span class="flag fast">Confidential</span><span class="flag">Parallel Processing</span></div>
+    <h1 class="cs-title">When everything happens at once</h1>
+    <p class="cs-lede">Designing the interrupt model for <b>B by Lenskart</b>, India's first AI smart glasses — 27 running states against 29 triggers, roughly <b>780 decisions</b>, distilled into one mental model.</p>
+    <div class="cs-board">
+      <div class="cs-board-cell"><div class="k">Role</div><div class="v cyan">Design Lead<small>end-to-end</small></div></div>
+      <div class="cs-board-cell"><div class="k">Team</div><div class="v" style="font-size:1.05rem">1 UX · 2 UI<small>+ product &amp; glass</small></div></div>
+      <div class="cs-board-cell"><div class="k">Timeline</div><div class="v" style="font-size:1.05rem">30 Jul–10 Sep<small>2026</small></div></div>
+      <div class="cs-board-cell"><div class="k">Decisions</div><div class="v fast">~780<small>27 × 29 matrix</small></div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="cs-plate"><div class="ph">HERO IMAGE<small>B by Lenskart worn mid-walk — icons for music, AI, camera, call orbiting the frame</small></div></div>
+
+  <div class="cs-body" id="csbody">
+
+    <section class="cs-block">
+      <h2><span class="n">01</span>The quiet problem nobody owned</h2>
+      <p>Most conversations about smart glasses are about the camera, the assistant and the battery. What decides whether people keep wearing them is quieter: <strong>what the device does when two things want it at the same time.</strong></p>
+      <p>B has one open-ear speaker, one camera and a touch strip. People reach it by voice, by the glass button and taps, and through the companion app. A dozen functions compete for those few resources, and they compete all day. A notification lands mid-song. Someone says "take a photo" while the assistant is still answering. An update is ready while a video is recording. A call comes in during an import.</p>
+      <p>Each feature team was answering these moments inside its own feature. Every answer was reasonable on its own. Together, they would have produced a device that behaved differently depending on which team happened to write the rule. On a product without a screen, that inconsistency doesn't read as a design flaw — <strong>it reads as a broken device.</strong></p>
+      <p>So I reframed the problem for the team: <strong>on glasses, behaviour is the interface.</strong> If B was going to earn trust, it had to act like one product, with one set of priorities, everywhere.</p>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">02</span>Choosing the harder path</h2>
+      <p>The fast option was to keep fixing collisions as they surfaced as bugs. I pushed for the opposite: decide every one of them before launch.</p>
+      <p>We listed every function on the device once and crossed it with every other. The result was a single interrupt matrix: <strong>27 running states against 29 incoming triggers, roughly 780 decisions.</strong> It spanned the AI modes (conversation, Meeting Mode, Live AI, Look &amp; Tell, calling, translation, music search), capture by button, voice and app, calls, media import, notifications, music gestures, and each stage of a firmware update.</p>
+      <p>Every cell had to commit to two answers. What does the system do? And what does the person perceive? Most specs stop at the first question. The second is where this work earned its value, because <strong>a correct rule the user can't sense is indistinguishable from a bug.</strong></p>
+      <figure class="cs-figure"><div class="ph-fig">IMAGE — the full 27 × 29 matrix, softly blurred to convey scale</div><figcaption>Roughly 780 decisions, one source of truth.</figcaption></figure>
+      <p>A simplified slice — each cell shows what happens when the column's request arrives while the row's activity is running:</p>
+      <div class="cs-table-wrap">
+        <table class="cs-table">
+          <thead><tr><th>Already running</th><th>AI request</th><th>Photo</th><th>Video</th><th>Call</th><th>Media import</th><th>Firmware install</th></tr></thead>
+          <tbody>
+            <tr><th>AI conversation</th><td>Ignored, beep only</td><td>Photo wins, AI ends</td><td>Video wins, AI ends</td><td>Call wins, AI ends</td><td>Blocked</td><td>Blocked, download continues</td></tr>
+            <tr><th>Video recording</th><td>Blocked</td><td>Blocked</td><td>Blocked</td><td>Call wins, recording saved</td><td>Blocked</td><td>Not applicable</td></tr>
+            <tr><th>Active call</th><td>Blocked</td><td>Blocked</td><td>Blocked</td><td>Standard earbud behaviour</td><td>Blocked</td><td>Download continues</td></tr>
+            <tr><th>Media import</th><td>Blocked, spoken reply</td><td>Blocked, tone</td><td>Blocked, tone</td><td>Both run</td><td>Not applicable</td><td>Blocked</td></tr>
+            <tr><th>Music playing</th><td>AI wins, music stops</td><td>Both run</td><td>Video wins, music stops</td><td>Call wins</td><td>Both run</td><td>Both run</td></tr>
+            <tr><th>Firmware installing</th><td>Blocked until reboot</td><td>Blocked until reboot</td><td>Blocked until reboot</td><td>Outgoing allowed</td><td>Blocked</td><td>Not applicable</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">03</span>From 780 decisions to one mental model</h2>
+      <p>A matrix is a reference. Nobody designs from it in a meeting. The real leverage came from reading across all 780 cells until the logic underneath became visible. It collapsed into a single priority ladder with five tiers: <strong>a higher tier interrupts a lower one, and a lower tier waits or is refused.</strong></p>
+      <ol class="cs-oList">
+        <li><strong>Calls.</strong> An incoming call ends an AI session or a recording and moves to the glasses.</li>
+        <li><strong>Work in progress.</strong> Recording, media import, firmware install. Whatever started first finishes. New requests are refused, never the running one.</li>
+        <li><strong>Deliberate capture</strong> by button, voice or app. It ends a general AI chat, unless the camera is already in use.</li>
+        <li><strong>AI sessions.</strong> They take over from music and announcements, one session at a time.</li>
+        <li><strong>Music and announcements.</strong> They always give way. Background downloads simply run alongside.</li>
+      </ol>
+      <p>One exception is intentional. During a firmware reboot, incoming calls fall back to the phone, because for those few seconds the glasses can't take them.</p>
+      <figure class="cs-figure"><div class="ph-fig">IMAGE — the five-tier priority ladder, Calls highlighted at the top</div></figure>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">04</span>Principles that outlive the matrix</h2>
+      <p>Rules answer today's questions. Principles answer next quarter's. I wanted these five to be what a new product manager reaches for when placing a feature none of us had imagined yet.</p>
+      <ul class="cs-list">
+        <li><strong>Never kill the user's work for the system's work.</strong> Maintenance waits. If an AI chat is running and an update is ready, the update holds with a toast and the chat carries on.</li>
+        <li><strong>A deliberate action beats an ambient one.</strong> Pressing a button to take a photo is clearer intent than an open conversation, so "take a photo" during a chat ends the chat and captures — unless Live AI or Look &amp; Tell is already using the camera.</li>
+        <li><strong>Protect anything that is writing data.</strong> Recording and import are where an interruption costs something. During an import, captures and AI requests are refused, while calls and music continue because they never touch the data.</li>
+        <li><strong>Let invisible work run in parallel.</strong> Work that doesn't compete for the same resource shouldn't wait. A firmware download runs alongside AI, capture and calls. Only the install is gated.</li>
+        <li><strong>One voice in the ear at a time.</strong> The speaker is the scarcest resource. Announcements queue by priority, the assistant can interrupt an announcement, and notifications stay silent during music instead of cutting into it.</li>
+      </ul>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">05</span>Designing the "no"</h2>
+      <p>Most design effort goes into the happy path. On this device, the moments that define trust are the refusals. When someone asks for something and nothing happens, they don't assume a rule. They assume the glasses are broken.</p>
+      <p>So I set one standard for every refusal in the matrix: <strong>the answer returns through the same channel the person used to ask.</strong> Someone speaking to their glasses should never have to pull out their phone to understand why nothing happened.</p>
+      <div class="cs-table-wrap">
+        <table class="cs-table">
+          <thead><tr><th>Person asked through</th><th>How the refusal is answered</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><th>Voice</th><td>A short spoken reply from the assistant</td><td>"I can't do that while the media is importing."</td></tr>
+            <tr><th>Glass button or tap</th><td>A distinct blocking tone on the glasses</td><td>Photo button pressed during a firmware install</td></tr>
+            <tr><th>Companion app</th><td>The control is hidden or disabled, with a tooltip or toast</td><td>"Import now" disabled while a video records</td></tr>
+            <tr><th>Tap that ends a session</th><td>An ending beep, so the person knows it closed</td><td>Double tap during an AI chat</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">06</span>The calls worth debating</h2>
+      <p>A framework is only as credible as its hardest cases. These are the ones that tested it.</p>
+      <ul class="cs-list">
+        <li><strong>A call arrives mid-recording.</strong> On paper this breaks the rule about protecting data. In practice, a missed call is a real-world cost and a shortened video is not a lost one. The call wins, and the recording is saved up to that moment — an ending tone, a "Recording stopped" card in the app, and the capture light turns off. Nothing they made is thrown away.</li>
+        <li><strong>A second AI request during an active session.</strong> Two sessions would mean two voices fighting for one speaker. The new request is ignored, and a wake tone confirms the glasses heard it.</li>
+        <li><strong>An update is ready during an import.</strong> The first draft asked the person to choose: cancel the import, or update later. We removed the question entirely. The update simply waits — the best decision for the user was the one we took off their plate.</li>
+        <li><strong>A notification arrives during music.</strong> It used to cut into the song. Now it stays silent, with audio ducking proposed as the next step.</li>
+      </ul>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">07</span>How the thinking matured</h2>
+      <p>The matrix went through three versions in four weeks. The most important change wasn't a rule. It was a stance. The first draft was system-first: maintenance could interrupt the person. By the second, it was user-first: <strong>whatever the person started always finishes.</strong></p>
+      <div class="cs-table-wrap">
+        <table class="cs-table">
+          <thead><tr><th>Version</th><th>What changed</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><th>25 Aug</th><td>Firmware downloads confirmed to run alongside an AI chat; open items closed</td><td>Only the install is gated, so updates never stall</td></tr>
+            <tr><th>12 Aug</th><td>Updates no longer end an AI chat or cancel a capture; the update waits</td><td>The user's task is never sacrificed for maintenance</td></tr>
+            <tr><th>12 Aug</th><td>"Cancel import or update later?" replaced by simply holding the update</td><td>One less decision for the user</td></tr>
+            <tr><th>12 Aug</th><td>Starting an import no longer ends an AI chat; the button is disabled with a tooltip</td><td>A secondary action can't cut off a running session</td></tr>
+            <tr><th>12 Aug</th><td>Notifications during music stay silent, with ducking proposed</td><td>Ambient audio isn't broken by lower-priority sound</td></tr>
+            <tr><th>12 Aug</th><td>Calls split into incoming and outgoing; feedback defined for every refusal</td><td>Every "no" now has an answer</td></tr>
+            <tr><th>30 Jul</th><td>First full matrix across AI, capture, import, music and firmware</td><td>One shared source of truth for every team</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">08</span>Owning the outcome, not the document</h2>
+      <p>Interaction specs often quietly die at handoff. The document is approved, the build drifts, and nobody notices until users do. I didn't want this one to end that way. Before launch, I turned the matrix into a design test plan, and my team and I tested the real build against it ourselves.</p>
+      <ul class="cs-list">
+        <li><strong>Two rounds on Android and iOS,</strong> on 7 Sep and 10 Sep 2026, followed by a pass on the iOS pre-prod build.</li>
+        <li><strong>Six running states</strong> (AI features, AI conversation, capture, calling, media import, firmware update), each crossed with every trigger: about <span class="fill">[X]</span> scenarios per platform.</li>
+        <li><strong>Two checks per scenario:</strong> did the system behave as designed, and did the feedback come back through the right channel?</li>
+      </ul>
+      <p>It caught problems that would otherwise have reached people's ears: taking a photo in Meeting Mode ended the meeting; the blocking tone for gestures was missing during capture on iOS; a firmware download moved on to install by itself; "Resume" in the notification drawer bypassed the install block; "Import now" stayed active on the gallery page; the caller's name was announced inconsistently within the same call.</p>
+      <p>By the pre-prod round, nearly every scenario passed. The one open issue — the gallery-page import button — went into launch logged and tracked. <span class="fill">[Update if since fixed.]</span></p>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">09</span>My role</h2>
+      <p>I led this work end to end as design lead on B, with a team of three designers.</p>
+      <ul class="cs-list">
+        <li><strong>Reframed the problem</strong> from fixing collisions one by one to deciding the device's behaviour as a whole.</li>
+        <li><strong>Defined every rule</strong> with the product manager and the glass team, covering both system behaviour and what the person hears or sees.</li>
+        <li><strong>Set the user-first stance</strong> that shaped versions two and three: maintenance waits, and the person's task always finishes.</li>
+        <li><strong>Set the standard for refusals:</strong> every "no" answers on the channel the person asked through.</li>
+        <li><strong>Distilled roughly 780 decisions</strong> into a five-tier ladder and five principles any team could apply without opening the matrix.</li>
+        <li><strong>Directed the team</strong> — the UX designer mapped edge cases; the UI designers built the refusal patterns such as toasts, tooltips and disabled controls.</li>
+        <li><strong>Stayed through the build,</strong> turning the matrix into a design test plan and running it on both platforms before launch.</li>
+      </ul>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">10</span>Impact</h2>
+      <ul class="cs-list">
+        <li>One shared behaviour model adopted across AI, capture, calling, app and firmware — every team building against the same source of truth.</li>
+        <li>About <span class="fill">[X]</span> behaviour and feedback issues caught in design QA before launch.</li>
+        <li><span class="fill">[Add a post-launch signal: support tickets, "device not responding" complaints, review mentions.]</span></li>
+      </ul>
+    </section>
+
+    <section class="cs-block">
+      <h2><span class="n">11</span>What I'd tell another design leader</h2>
+      <p><strong>On a screenless device, feedback is the interface.</strong> The rules matter, but what people actually live with is the tone, the spoken reply, the disabled button. Designing the "no" deserved as much care as the "yes."</p>
+      <p><strong>Invest in principles, not cells.</strong> Nobody remembers 780 decisions. Five principles and a ladder let every team make the right call on features that didn't exist yet.</p>
+      <p><strong>Design isn't finished at handoff.</strong> Testing the build ourselves caught what no spec review would have. The matrix became more valuable as a test plan than as a document.</p>
+      <p><strong>What I'd do differently:</strong> bring QA in from version one, so the matrix and the test plan are written as one artifact from the first day.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span class="foot-meta">Animish Kolge · The Design Chronicle · © 2026 · Confidential</span>
+    <div class="foot-links">
+      <a href="smart-glasses.html">← B by Lenskart</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /protected -->
+
+<script>
+(function(){
+  "use strict";
+  /* ===== Change the passphrase here ===== */
+  var PASSWORD = "lenskart";
+  /* ====================================== */
+  var lock = document.getElementById("lock");
+  var prot = document.getElementById("protected");
+  var form = document.getElementById("lockForm");
+  var input = document.getElementById("lockInput");
+  var err = document.getElementById("lockErr");
+  var KEY = "bbl-parallel-unlocked";
+
+  function unlock(){
+    lock.style.display = "none";
+    prot.hidden = false;
+    try { sessionStorage.setItem(KEY, "1"); } catch(e){}
+  }
+  try { if (sessionStorage.getItem(KEY) === "1") unlock(); } catch(e){}
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (input.value.trim().toLowerCase() === PASSWORD.toLowerCase()) {
+      err.hidden = true; unlock();
+    } else {
+      err.hidden = false; input.value = ""; input.focus();
+      lock.querySelector(".lock-card").classList.remove("shake");
+      void lock.offsetWidth;
+      lock.querySelector(".lock-card").classList.add("shake");
+    }
+  });
+
+  /* mobile nav (inside protected) */
+  var t = document.getElementById("navToggle"), l = document.getElementById("navLinks");
+  if (t && l) t.addEventListener("click", function(){ l.classList.toggle("open"); });
+})();
+</script>
+</body>
+</html>

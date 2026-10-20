@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reminders on B, A Voice-First Feature · Animish Kolge</title>
+<meta name="description" content="Designing Reminders for B by Lenskart, a voice-first feature across glasses and companion app. Voice conversation design, sensible defaults, glass-connectivity rules and a text-hierarchy system.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Design Chronicle, Animish Kolge">
+<meta property="og:title" content="Reminders on B, A Voice-First Feature · Animish Kolge">
+<meta property="og:description" content="A voice-first Reminders feature for India's first AI smart glasses, designed across voice, glasses and app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Archivo:wght@500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../casestudy.css">
+</head>
+<body>
+<a class="skip" href="#csbody">Skip to content</a>
+
+<nav class="nav">
+ <div class="nav-inner">
+ <a href="../index.html" class="brand">Animish&nbsp;Kolge <span class="num">Design Leader</span></a>
+ <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+ <div class="nav-links" id="navLinks">
+ <a href="../index.html#edition">Work</a>
+ <a href="../index.html#profile">Profile</a>
+ <a href="../index.html#toolkit">Toolkit</a>
+ <a href="../index.html#desk">Contact</a>
+ <a href="https://www.animishdesign.com/resume" class="nav-cta">Résumé</a>
+ </div>
+ </div>
+</nav>
+
+<header class="cs-hero">
+ <div class="wrap">
+ <a href="smart-glasses.html" class="cs-back"><span class="arr">←</span> Back to B by Lenskart</a>
+ <div class="cs-round"><span>Feature Story</span><span class="flag fast">Voice-first</span><span class="flag">B by Lenskart</span></div>
+ <h1 class="cs-title">Reminders on B a voice-first feature</h1>
+ <p class="cs-lede">B's first personalisation feature. A user can say <b>"Hey Buddy, set a reminder"</b> and get notified on their phone when it's due. The hard part was never the screen, it was designing a feature the user mostly <b>can't see</b>, spread across glasses they speak to and a phone that does the remembering.</p>
+ <div class="cs-board">
+ <div class="cs-board-cell"><div class="k">Product</div><div class="v" style="font-size:1.05rem">B by Lenskart<small>AjnaLens × Lenskart</small></div></div>
+ <div class="cs-board-cell"><div class="k">Surfaces</div><div class="v" style="font-size:1.05rem">Voice + App<small>Android &amp; iOS</small></div></div>
+ <div class="cs-board-cell"><div class="k">Final PRD</div><div class="v" style="font-size:1.05rem">28 Jul<small>2026</small></div></div>
+ <div class="cs-board-cell"><div class="k">Role</div><div class="v cyan" style="font-size:1.05rem">Design Lead<small>UI · voice · text system</small></div></div>
+ </div>
+ </div>
+</header>
+
+<main class="wrap">
+ <figure class="cs-video">
+ <div class="cs-video-frame">
+ <video id="reminderVideo" src="../assets/reminder-intro.mp4" autoplay muted loop playsinline controls preload="metadata"></video>
+ <button class="cs-video-sound" id="soundBtn" type="button" aria-label="Unmute video">
+ <span class="ic">🔊</span> Tap for sound
+ </button>
+ </div>
+ <figcaption>Reminders on B, intro walkthrough. Tap for sound.</figcaption>
+ </figure>
+
+ <div class="cs-body" id="csbody">
+
+ <section class="cs-block">
+ <h2><span class="n">01</span>Overview</h2>
+ <p>Reminders was the <strong>first feature on B that belonged to the user, not the product</strong>. Everything else on the glasses, the camera, Live AI, meeting recording, was something B did <em>to</em> the world. A reminder is something the user puts <em>into</em> B and trusts it to give back later, at exactly the right moment. That shift, from capability to personal trust, is what made a seemingly small feature worth getting right.</p>
+ <p>Lenskart's ask was simple on the surface: let people set reminders either by voice through the glasses or inside the companion app, and notify them on their phone when a reminder is due. A user says <em>"Hey Buddy, set a reminder"</em> mid-task, cooking, driving, walking into a meeting, and carries on. My job was to make that one sentence feel completely safe, across two devices that each only do half the job.</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">02</span>Where it started, and why it wasn't small</h2>
+ <p>The brief arrived as a PRD with three lines of intent: let users set reminders by voice or in the app, notify them when due, keep creation under five seconds. On paper, one of the smallest features on B.</p>
+ <p>It stopped being small the moment I stopped reading it as a spec and started reading it as <strong>the person wearing the glasses</strong>. That person isn't looking at a screen. They say a sentence and look away. They never see a confirmation, never scan a list to check it saved. All they have is Buddy's voice in their ear, and they have to believe, on that alone, that what they said was captured exactly right.</p>
+ <p>That reframes the whole problem. On a phone, trust is cheap: you can see the reminder sitting in a list. On glasses, <strong>trust has to be designed into the words Buddy says back</strong>, because the spoken confirmation is the only proof the user gets. A feature that looked like "a form and a notification" was really a feature about belief.</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">03</span>What made it tricky</h2>
+ <p>Three problems kept resurfacing as I worked through the PRD, and each one was a design problem hiding as a requirement.</p>
+ <ul class="cs-list">
+ <li><strong>People don't talk like a PRD.</strong> The spec listed five tidy request types. Real speech isn't tidy, people say "at 8" without AM or PM, "next Monday", "daily", or name a time that's already gone. If Buddy only understood the five clean cases, it would fail in the exact messy moments people actually use voice. So the real scope wasn't five cases; it was <em>everything a person might plausibly say</em>, and a sensible answer for each.</li>
+ <li><strong>One feature living on two devices.</strong> The glasses can only <em>capture</em> a reminder by voice. Viewing, editing, deleting and the actual notification all live on the phone. To the user it must feel like one seamless thing, but behind the scenes it's two systems that have to stay in sync, and the reminder still has to arrive on time even if the glasses are in a drawer.</li>
+ <li><strong>The PRD contradicted itself.</strong> One line said reminders could be created in the app; the state table said users <em>couldn't</em> create one while the glasses were unpaired or disconnected. Read literally, someone whose glasses were charging would be locked out of setting a phone reminder, absurd for a feature about reliability. Nobody had noticed because it was a rule, not a screen, and rules don't show up in a mockup review.</li>
+ </ul>
+ <p>That third point is where my real work began. The interesting design wasn't the add-reminder form, it was the <strong>behaviour nobody had written down yet</strong>: what happens across every device state, every vague phrase, every failure.</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">04</span>My role</h2>
+ <p>I led this as a design manager, not just a screen designer. The deliverable that mattered most wasn't a set of mockups, it was a <strong>single, written definition of how Reminders behaves everywhere</strong>, so the AI, app, and QA teams could all build from one source instead of each inventing their own answer to the same edge case.</p>
+ <ul class="cs-list">
+ <li><strong>Voice conversation design.</strong> Defined every way a reminder can be set by voice, what Buddy understands, the single question it's allowed to ask when something's missing, and what it assumes when the user is vague. This is the part with no UI, and it's where the feature lives or dies.</li>
+ <li><strong>AI voice confirmation.</strong> Scripted what Buddy says on success, failure and unsupported requests, and decided the session stays open afterwards so the user can keep talking. Because the spoken reply is the only receipt, its exact wording was a design decision, not copywriting.</li>
+ <li><strong>UI design.</strong> Designed the companion app end to end, onboarding, the reminder list and filters, add and edit, notifications, permissions, and the empty and error states that most specs skip.</li>
+ <li><strong>Text hierarchy research.</strong> Voice produces sentences of any length; my list screens assumed short titles. I researched how titles and descriptions should truncate and wrap across the app, then turned it into a rule used well beyond Reminders.</li>
+ </ul>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">05</span>How I thought about it, four trade-offs</h2>
+ <p>Four decisions shaped the feature. I'm listing them as trade-offs on purpose: each one <em>bought</em> something for the user and <em>cost</em> something elsewhere, and naming the cost is how you know it was a real decision and not just a preference.</p>
+ <div class="cs-table-wrap">
+ <table class="cs-table">
+ <thead><tr><th>Decision</th><th>Why I made it</th><th>Trade-off</th></tr></thead>
+ <tbody>
+ <tr><th>Defaults over extra questions</th><td>Creation had to stay under five seconds while the user is mid-activity. Every follow-up question is time the user doesn't have, so Buddy guesses sensibly instead of interrogating.</td><td>Buddy sometimes guesses wrong (9 AM for a date-only reminder), so the spoken confirmation must always repeat the time back for the user to catch it.</td></tr>
+ <tr><th>Never lose what the user said</th><td>If the user trails off or goes silent, throwing the reminder away would betray the one thing the feature promises. So it's saved as <em>unscheduled</em> rather than discarded.</td><td>The app needed a whole Unscheduled tab to hold these half-finished reminders, a surface that only exists because we refuse to lose input.</td></tr>
+ <tr><th>Glasses are for input only</th><td>Tying delivery to the glasses would mean a reminder fails whenever they're off. Since reminders are about reliability, the phone owns all delivery; the glasses just capture.</td><td>Richer glasses-side features (announcing reminders on the lens) move to a later version.</td></tr>
+ <tr><th>Saving is never blocked</th><td>A missing notification permission should never stop a reminder from being <em>saved</em>, losing the user's intent over a settings toggle is the worst outcome.</td><td>Needed a gentle, persistent "Enable" chip to recover the permission later, instead of a hard block that would guarantee the save.</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">06</span>Thinking beyond the screen</h2>
+ <p>The lasting output of this project wasn't visual. It was a set of decisions written down clearly enough that other people could build without guessing.</p>
+ <ul class="cs-list">
+ <li><strong>Written rules, not just designs.</strong> I documented every voice case, default, state change and connectivity behaviour as plain rules. That meant the AI, engineering and QA teams worked from one reference instead of pinging design for each situation, fewer inconsistencies, fewer "what should happen if…" threads.</li>
+ <li><strong>A standard, not a one-off.</strong> The text-hierarchy rules I researched for Reminders became the app-wide standard for how titles and descriptions behave. One feature's problem turned into a decision that keeps the whole product consistent.</li>
+ <li><strong>Designing for failure, not just the happy path.</strong> Failure, cancellation, disconnection and duplicate commands were specified alongside the happy path, so no awkward case got silently decided by whoever happened to code it.</li>
+ </ul>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">07</span>Designing the voice conversation</h2>
+ <p>I started from the PRD's five request types and kept asking one question: <em>what else would a real person actually say?</em> That list grew fast, unclear AM/PM, relative dates, times already past, recurring requests, save failures, denied permissions, and the most common case of all, a user who just stops talking.</p>
+ <p>One rule held the whole conversation together: <strong>Buddy asks at most one clarifying question, and never throws away what the user already said.</strong> Someone talking to their glasses mid-task will tolerate exactly one follow-up, a back-and-forth breaks the five-second promise and the illusion that B simply understood them.</p>
+ <ul class="cs-list">
+ <li><strong>Complete request.</strong> "Hey Buddy, set a reminder for my dentist appointment tomorrow at 1 PM." Buddy saves it, syncs to the app, schedules the notification, and confirms by repeating it back: "Sure, I'll remind you about your dentist appointment tomorrow at 1 PM." The read-back <em>is</em> the trust, it lets the user catch a mistake without ever looking down.</li>
+ <li><strong>Missing time.</strong> "Set a reminder to call Rahul." Here Buddy spends its one allowed question, "Sure, when should I schedule this reminder?", then saves and confirms.</li>
+ <li><strong>No answer.</strong> If the user doesn't reply, Buddy still doesn't lose the intent. It saves an unscheduled reminder and says, "Done. I've set the reminder." The task is kept; the user can add a time later in the app.</li>
+ <li><strong>Failure.</strong> If saving fails on the network, server or sync, Buddy says so plainly, "I couldn't set the reminder. Please try again", rather than failing silently, which on a screenless device would read as the glasses being broken. The user can retry by voice or fall back to the app.</li>
+ </ul>
+ <div class="phone-strip center"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/onb-3-listening.jpg" alt="Voice capture, listening state, LED blinks pink" loading="lazy"></div></div><div class="iphone-cap">Voice capture, listening, LED blinks pink</div></div></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">08</span>When the user is vague</h2>
+ <p>Rather than interrogate the user, Buddy fills gaps with defaults a reasonable person would choose, and only pushes back when guessing would be genuinely unsafe (like a time in the past).</p>
+ <div class="cs-table-wrap">
+ <table class="cs-table">
+ <thead><tr><th>What the user says</th><th>What Buddy does</th><th>Why</th></tr></thead>
+ <tbody>
+ <tr><th>Date only ("call Rahul tomorrow")</th><td>Sets it for 9 AM that day</td><td>A sensible start-of-day default; the read-back lets them adjust</td></tr>
+ <tr><th>Time only ("web check-in at 9 AM")</th><td>Today if the time hasn't passed, otherwise tomorrow</td><td>Matches what a person means by "9 AM" without asking which day</td></tr>
+ <tr><th>Unclear AM or PM ("at 8")</th><td>Picks the nearest upcoming slot</td><td>The soonest match is almost always the intended one</td></tr>
+ <tr><th>Relative date ("next Monday")</th><td>The upcoming Monday</td><td>Resolves natural language the way the user would in their head</td></tr>
+ <tr><th>A time that has passed</th><td>"I can't set a reminder for a time that has already passed. When in future should I remind you?"</td><td>The one case worth a question, a silent guess here would be wrong and lose trust</td></tr>
+ <tr><th>Recurring ("daily at 9 AM")</th><td>Explains it can't repeat yet, and sets a one-time reminder for tomorrow at 9 AM</td><td>Honest about the V1 limit, but still captures the intent instead of refusing</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p style="margin-top:16px"><strong>Keeping the session safe.</strong> The conversation also has to fail gracefully. If the user interrupts Buddy, it drops what it was doing and handles the new command. If they cancel or the session ends before saving, nothing is written, no half-made reminders. If the glasses disconnect mid-sentence, no orphan reminder is created. And a repeated command never produces a duplicate. These aren't edge cases to the user, they're the difference between a feature that feels solid and one that feels flaky.</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">09</span>Designing the app UI</h2>
+ <p>Voice is where a reminder is created; the app is where the user confirms it exists. So the app had to make a hands-free, voice-created reminder feel real and editable.</p>
+ <p><strong>First-time user, learn by doing.</strong> People don't fully trust "just say it" until they have seen it work once. So instead of a text explainer, onboarding has a "Try Now" that walks the user through setting one real reminder with the glasses, the listening state shows the LED blinking pink, a success screen confirms it, and a coachmark shows where it'll live. They learn the feature by succeeding at it, not by reading about it.</p>
+ <div class="phone-strip"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/onb-1-intro.jpg" alt="Intro, Reminders overview" loading="lazy"></div></div><div class="iphone-cap">Intro, Reminders overview</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/onb-2-howto.jpg" alt="How to use Reminders" loading="lazy"></div></div><div class="iphone-cap">How to use Reminders</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/onb-3-listening.jpg" alt="Try Now, listening state" loading="lazy"></div></div><div class="iphone-cap">Try Now, listening state</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/onb-4-success.jpg" alt="Your reminder is set" loading="lazy"></div></div><div class="iphone-cap">Your reminder is set</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/onb-5-coachmark.jpg" alt="Coachmark, where to find them" loading="lazy"></div></div><div class="iphone-cap">Coachmark, where to find them</div></div></div><p class="phone-strip-hint" aria-hidden="true">↔ Swipe to see all screens</p>
+ <p><strong>Dashboard widget.</strong> The home screen shows only today's upcoming reminders, at most two items and a count, because the dashboard is for a glance, not a database. And if nothing is scheduled today, the widget <em>hides itself</em> rather than showing an empty card: an empty state on a home screen is just clutter that makes the feature feel unused.</p>
+ <div class="phone-strip center"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/dash-home.jpg" alt="Home dashboard with the Reminders widget" loading="lazy"></div></div><div class="iphone-cap">Home dashboard with the Reminders widget</div></div></div>
+ <p><strong>Reminder list and filters.</strong> Four tabs, each sorted for how the user actually reads that tab, upcoming-first where you're planning ahead, newest-first where you're looking back. Tapping a reminder opens a bottom sheet with full detail plus Edit and Delete. Past reminders can be deleted but not edited, because editing something that already happened has no meaning, removing the option prevents a confusing dead end.</p>
+ <div class="cs-table-wrap">
+ <table class="cs-table">
+ <thead><tr><th>Tab</th><th>Sorted by</th><th>Why that order</th></tr></thead>
+ <tbody>
+ <tr><th>All</th><td>Time of creation</td><td>A neutral, recognisable "everything I've made" view</td></tr>
+ <tr><th>Scheduled</th><td>Reminder time, upcoming first</td><td>Here the user is planning, the next thing due matters most</td></tr>
+ <tr><th>Unscheduled</th><td>Time of creation</td><td>No time to sort by; recency is the only useful order</td></tr>
+ <tr><th>Past</th><td>Reminder time, newest first</td><td>Looking back, the most recent is the most relevant</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="phone-strip"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/list-all.jpg" alt="All, by creation" loading="lazy"></div></div><div class="iphone-cap">All, by creation</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/list-scheduled.jpg" alt="Scheduled, upcoming first" loading="lazy"></div></div><div class="iphone-cap">Scheduled, upcoming first</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/list-unscheduled.jpg" alt="Unscheduled" loading="lazy"></div></div><div class="iphone-cap">Unscheduled</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/list-past.jpg" alt="Past, newest first" loading="lazy"></div></div><div class="iphone-cap">Past, newest first</div></div></div><p class="phone-strip-hint" aria-hidden="true">Swipe sideways for all screens, scroll a screen for its full height</p>
+ <p><strong>Add and edit.</strong> The form's defaults do the work so the common case needs almost no input: the notification toggle is on, the date is today, the time is one hour from now. Past dates are disabled outright, and choosing a past time disables Save with a clear reason, "Please choose a time later than the current time", so the user is stopped <em>before</em> an error, not scolded after one. Switching between scheduled and unscheduled keeps the values already entered, so toggling never costs the user their work.</p>
+ <div class="phone-strip"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r10.jpg" alt="Add, defaults, toggle off" loading="lazy"></div></div><div class="iphone-cap">Add, defaults, toggle off</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r11.jpg" alt="Reminder updated" loading="lazy"></div></div><div class="iphone-cap">Reminder updated</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r12.jpg" alt="Reminder set successfully" loading="lazy"></div></div><div class="iphone-cap">Reminder set successfully</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r13.jpg" alt="Stay notified, permission" loading="lazy"></div></div><div class="iphone-cap">Stay notified, permission</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r14.jpg" alt="Error, choose a later time" loading="lazy"></div></div><div class="iphone-cap">Error, choose a later time</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r15.jpg" alt="Reminders list" loading="lazy"></div></div><div class="iphone-cap">Reminders list</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r16.jpg" alt="Detail, edit or delete" loading="lazy"></div></div><div class="iphone-cap">Detail, edit or delete</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r17.jpg" alt="Edit, time & date" loading="lazy"></div></div><div class="iphone-cap">Edit, time & date</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r18.jpg" alt="Edit, date picker" loading="lazy"></div></div><div class="iphone-cap">Edit, date picker</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/r20.jpg" alt="Add, schedule on" loading="lazy"></div></div><div class="iphone-cap">Add, schedule on</div></div></div><p class="phone-strip-hint" aria-hidden="true">Swipe sideways for all screens, scroll a screen for its full height</p>
+ <p><strong>Notifications and permissions.</strong> A due reminder arrives as a phone notification; tapping it opens straight to that reminder's detail. Reminders need two permissions, general notifications and one-time (alarm) access, but I deliberately decoupled permission from saving. If the user taps "Not now," the reminder is still saved, and a quiet "Enable" chip waits on the relevant screens so they can grant access later without being nagged. The principle: never hold the user's data hostage to a settings decision.</p>
+ <div class="phone-strip"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/ae-11.jpg" alt="Reminder notifications prompt" loading="lazy"></div></div><div class="iphone-cap">Reminder notifications prompt</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/nt-21.jpg" alt="Stay notified, permission" loading="lazy"></div></div><div class="iphone-cap">Stay notified, permission</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/ae-12.jpg" alt="Alarms & reminders setting" loading="lazy"></div></div><div class="iphone-cap">Alarms & reminders setting</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/ae-13.jpg" alt="Enable banner on the list" loading="lazy"></div></div><div class="iphone-cap">Enable banner on the list</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/nt-22.jpg" alt="Reminder set, toast" loading="lazy"></div></div><div class="iphone-cap">Reminder set, toast</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/reminders/ae-15.jpg" alt="Reminder updated, toast" loading="lazy"></div></div><div class="iphone-cap">Reminder updated, toast</div></div></div><p class="phone-strip-hint" aria-hidden="true">Swipe sideways for all screens, scroll a screen for its full height</p>
+ <p><strong>Empty and feedback states.</strong> A real zero state ("No saved reminders" with a New Reminder button) invites the first action instead of looking broken, and short toasts for set, updated and deleted close the loop so every action gets an acknowledgement.</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">10</span>Glass connectivity, resolving the contradiction</h2>
+ <p>This is where I settled the PRD's self-contradiction, and it came from one reframing. The spec treated "glasses not connected" as a single blocked state. But that lumps together things that have nothing to do with the glasses. So I asked the narrower question: <strong>what actually needs the glasses?</strong> The answer was just one thing, creating a reminder <em>by voice</em>. Viewing, editing, deleting, and getting notified all happen on the phone and never touch the glasses at all.</p>
+ <p>Once framed that way, the contradiction dissolved. Only voice creation depends on connection; everything else works in every state.</p>
+ <div class="cs-table-wrap">
+ <table class="cs-table">
+ <thead><tr><th>Glasses state</th><th>Create by voice</th><th>Create in app</th><th>Edit / delete in app</th><th>Phone notification</th></tr></thead>
+ <tbody>
+ <tr><th>Paired, connected</th><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+ <tr><th>Paired, disconnected</th><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+ <tr><th>Unpaired</th><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+ <tr><th>Off or charging</th><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+ <tr><th>Connected, no internet</th><td>Depends on storage</td><td>Yes or queued</td><td>Yes or queued</td><td>Existing reminders still notify</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p style="margin-top:16px">This mattered because the whole feature is a promise about reliability. The clearest test of that promise: a user takes their glasses off to charge overnight and should still get their 7 AM reminder. Any design where "glasses off" means "reminder lost" fails the one thing Reminders exists to do.</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">11</span>Text hierarchy research</h2>
+ <p>This started from a small, telling observation. When people <em>type</em> a reminder, they write "Call Rohan." When they <em>speak</em> one, they say a full sentence: "Book spiderman movie ticket for Wednesday 4 PM show at Viviana." Voice has no length limit, and my list screens had been designed for short typed titles. A voice-first feature had quietly broken my own layouts.</p>
+ <p>So rather than patch one screen, I defined how headings and descriptions should behave in every place text appears, based on what each place is <em>for</em>.</p>
+ <div class="cs-table-wrap">
+ <table class="cs-table">
+ <thead><tr><th>Where</th><th>Heading (title)</th><th>Subheading / description</th></tr></thead>
+ <tbody>
+ <tr><th>Reminder list</th><td>One line, truncated with an ellipsis</td><td>Date and time only</td></tr>
+ <tr><th>Detail bottom sheet</th><td>Wraps up to 2 lines, no truncation</td><td>Full description, never truncated</td></tr>
+ <tr><th>Dashboard widget</th><td>One line, truncated with an ellipsis</td><td>Date and time only</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p style="margin-top:16px">The logic is simple once named: <strong>lists are for scanning, the detail sheet is for reading</strong>. A scanning surface keeps every row the same height so the eye can move fast; a reading surface shows everything so nothing important is hidden. I then applied the same rule to other flows across the app, so long voice-made text behaves predictably everywhere, not just in Reminders. <span class="fill">[Open: name the other flows where these rules were applied, and add the exact character limits if defined.]</span></p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">12</span>User flow</h2>
+ <p>Reminders has three core flows: creating one in the app, creating one by voice on the glasses, and managing it afterwards. I mapped each end to end, including every branch, default and failure, so engineering and QA built against the same path instead of filling gaps by guesswork.</p>
+ <figure class="cs-flow">
+ <figcaption class="cs-flow-cap">Flow 1 · Create a reminder in the app</figcaption>
+ <div class="cs-flow-scroll"><img src="../assets/flows/flow-01-create-in-app.png" alt="User flow for creating a reminder in the app, from opening Reminders through the zero state, set-reminder page, notification scheduling, permissions and success." loading="lazy"></div>
+ </figure>
+ <figure class="cs-flow">
+ <figcaption class="cs-flow-cap">Flow 2 · Create a reminder by voice</figcaption>
+ <div class="cs-flow-scroll"><img src="../assets/flows/flow-02-create-by-voice.png" alt="User flow for creating a reminder by voice, Buddy extracts task, date and time, fills missing parts with defaults, handles past times, saves and confirms." loading="lazy"></div>
+ </figure>
+ <figure class="cs-flow">
+ <figcaption class="cs-flow-cap">Flow 3 · View, edit &amp; delete a reminder</figcaption>
+ <div class="cs-flow-scroll"><img src="../assets/flows/flow-03-view-edit-delete.png" alt="User flow for viewing, editing and deleting a reminder, tabs, detail sheet, edit path with validation, and delete confirmation." loading="lazy"></div>
+ </figure>
+ <p class="cs-flow-hint" aria-hidden="true">↔ Scroll a diagram sideways to follow the full flow</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">13</span>Edge cases and behaviour rules</h2>
+ <p>Finally, I documented how a reminder moves between states and what happens to its notification at each step, one reference so engineering and QA never had to decide behaviour on the fly. This table is the "boring" part of the work, and also the part that decides whether the feature feels trustworthy in the real world.</p>
+ <div class="cs-table-wrap">
+ <table class="cs-table">
+ <thead><tr><th>Trigger</th><th>What happens</th></tr></thead>
+ <tbody>
+ <tr><th>Reminder time is reached</th><td>Upcoming → Past</td></tr>
+ <tr><th>Date and time removed</th><td>Scheduled → Unscheduled, notification removed</td></tr>
+ <tr><th>Date and time added</th><td>Unscheduled → Upcoming, notification created</td></tr>
+ <tr><th>Past reminder edited to a future time</th><td>Past → Upcoming</td></tr>
+ <tr><th>Reminder deleted before it is due</th><td>Notification cancelled</td></tr>
+ <tr><th>Notification opened after deletion</th><td>Redirects to the reminder list</td></tr>
+ <tr><th>Permission revoked later</th><td>Permission prompt shown on next app open</td></tr>
+ <tr><th>App force-stopped</th><td>Notification still triggers</td></tr>
+ <tr><th>Save or delete fails</th><td>Reminder kept, retry offered</td></tr>
+ <tr><th>Empty title</th><td>Save blocked</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">14</span>Outcome &amp; what's next</h2>
+ <p>Reminders shipped as a complete voice-to-phone feature on Android and iOS. The real deliverable underneath the screens: four voice cases, six vague-input defaults, five glass-connectivity states and one text-hierarchy system that now runs across other flows in the app, all written down as rules any team could build against.</p>
+ <p class="fill">[Open: add real outcome data if available, QA results, adoption or feedback. No invented numbers.]</p>
+ <p style="margin-top:8px"><strong>V2 scope.</strong> Ask about, edit and delete reminders by voice · image-based reminders with Buddy · reminder announcements played on the glasses · recurring reminders · changing the due notification time.</p>
+ <p><strong>What's still open, honestly.</strong> One question I chose not to force an answer to: when a reminder is set <em>in the app</em>, I know exactly when to ask for notification permission, right after saving. But when it's set <em>by voice</em>, the user is looking at the world, not the phone, so there's no good moment to interrupt with a permission sheet. Rather than ship a jarring prompt at the wrong time, I flagged it as a known issue to solve properly, because a mistimed permission ask would undo the very hands-free feeling the feature is built on.</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">15</span>What this taught me</h2>
+ <p><strong>On a screenless device, the conversation is the interface.</strong> There's no layout to lean on, the trust is carried entirely by what Buddy says and when it stays quiet. Good defaults and one clear read-back did more for confidence than any amount of UI could.</p>
+ <p>And as a lead, the most valuable thing I produced wasn't a screen. It was the set of rules behind the screens: what Buddy says, what depends on the glasses, how text behaves, what happens when things fail. <strong>Screens show one moment; rules decide every moment the screens don't show</strong>, and on a product like B, that's most of them.</p>
+ </section>
+
+ </div>
+</main>
+
+<div class="wrap cs-next">
+ <a href="smart-glasses.html">
+ <div><div class="lab">Back to →</div><div class="nm">B by Lenskart</div></div>
+ <span class="cs-back" style="margin:0"><span class="arr" style="transform:none">→</span></span>
+ </a>
+</div>
+
+<footer class="foot">
+ <div class="wrap foot-inner">
+ <span class="foot-meta">Animish Kolge · The Design Chronicle · © 2026</span>
+ <div class="foot-links">
+ <a href="mailto:animish.kolge@gmail.com">Email</a>
+ <a href="https://www.linkedin.com/in/animish-kolge">LinkedIn</a>
+ <a href="../index.html">Home</a>
+ </div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var v=document.getElementById("reminderVideo"), b=document.getElementById("soundBtn");
+ if(!v||!b) return;
+ function enableSound(){
+ v.muted=false; v.volume=1;
+ var p=v.play(); if(p&&p.catch)p.catch(function(){});
+ b.classList.add("hidden");
+ }
+ b.addEventListener("click", enableSound);
+ v.addEventListener("click", function(){ if(v.muted) enableSound(); });
+})();
+</script>
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* ============================================================
+   HOMEPAGE — interactive layer (The Design Chronicle)
+   Layered on top of styles.css; homepage only.
+   ============================================================ */
+
+/* ---- reading progress ink bar ---- */
+.progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: var(--red); z-index: 300; transition: width .08s linear;
+}
+
+/* ---- print-in load animation ---- */
+.load-1, .load-2, .load-3, .np-line { opacity: 0; transform: translateY(14px); }
+.np-line { display: block; transform: translateY(0.34em); }
+.is-ready .load-1 { animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+.is-ready .load-2 { animation: rise .7s cubic-bezier(.2,.7,.2,1) .12s forwards; }
+.is-ready .load-3 { animation: rise .7s cubic-bezier(.2,.7,.2,1) .24s forwards; }
+.is-ready .np-line { animation: revealUp .8s cubic-bezier(.2,.7,.2,1) forwards; }
+.is-ready .np-line:nth-child(2) { animation-delay: .14s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+/* nameplate lines wipe up behind a clip */
+.nameplate { overflow: hidden; }
+.np-line { will-change: transform, opacity; }
+@keyframes revealUp { from { opacity: 0; transform: translateY(0.9em); } to { opacity: 1; transform: none; } }
+
+/* rule draws across */
+.plate-rule.draw { transform: scaleX(0); transform-origin: left; }
+.is-ready .plate-rule.draw { animation: drawX .8s cubic-bezier(.2,.7,.2,1) .3s forwards; }
+@keyframes drawX { to { transform: scaleX(1); } }
+
+/* ---- live ticker ---- */
+.ticker {
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  background: var(--ink); color: var(--paper); overflow: hidden; position: relative; z-index: 1;
+}
+.ticker-track { display: flex; gap: 0; white-space: nowrap; width: max-content; animation: marquee 42s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ti {
+  font-family: var(--label); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase;
+  color: #E6E0D2; padding: 11px 0; margin-right: 44px; display: inline-flex; align-items: center; gap: 44px;
+}
+.ti::after { content: "✦"; color: #E8A59E; font-size: .7em; }
+.ti b { color: #fff; margin-right: 8px; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---- interactive project entries ---- */
+.entry { cursor: pointer; will-change: transform; }
+.entry .entry-title span {
+  background-image: linear-gradient(var(--red), var(--red));
+  background-size: 0% 2px; background-position: 0 100%; background-repeat: no-repeat;
+  transition: background-size .35s ease, color .2s;
+}
+.entry:hover .entry-title span { color: var(--red); background-size: 100% 2px; }
+.entry-no b { transition: color .25s, transform .25s; }
+.entry:hover .entry-no b { color: var(--red); transform: translateX(3px); }
+.entry:hover .entry-go { color: var(--red); }
+.entry:hover .entry-go .arr { transform: translateX(5px); }
+.entry-go .arr { transition: transform .25s; }
+/* dim the siblings when one row is active (spotlight) */
+.editions.has-hover .entry:not(:hover) { opacity: .45; }
+.editions .entry { transition: opacity .3s, background .2s; }
+
+/* ---- floating hover-peek clipping ---- */
+.peek {
+  position: fixed; top: 0; left: 0; z-index: 250; width: 300px; pointer-events: none;
+  opacity: 0; transform: translate(-50%, -46%) scale(.92) rotate(-3deg);
+  transition: opacity .22s ease, transform .28s cubic-bezier(.2,.8,.2,1);
+}
+.peek.show { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-3deg); }
+.peek-clip {
+  background: var(--paper); border: 1px solid var(--ink);
+  box-shadow: 0 22px 50px -18px rgba(20,18,14,.55);
+  padding: 16px 16px 14px;
+  --accent: var(--red);
+}
+.peek-clip::before {
+  content: "THE DESIGN CHRONICLE"; display: block;
+  font-family: var(--label); font-size: .5rem; letter-spacing: .22em; color: var(--ink-mute);
+  text-align: center; padding-bottom: 8px; margin-bottom: 10px; border-bottom: 1px solid var(--hair);
+}
+.peek-kicker { font-family: var(--label); font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.peek-title { font-family: var(--display); font-weight: 900; font-size: 1.35rem; line-height: 1.05; margin-bottom: 12px; }
+.peek-photo {
+  aspect-ratio: 16/10; border: 1px solid var(--ink); background:
+    repeating-radial-gradient(circle at 3px 3px, var(--accent) 0 1.1px, transparent 1.4px 6px) 0 0 / 9px 9px,
+    var(--paper-2);
+  display: grid; place-items: center; overflow: hidden; position: relative;
+}
+.peek-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.peek-metric {
+  font-family: var(--display); font-weight: 900; font-size: 2.4rem; color: var(--ink);
+  background: var(--paper); padding: 2px 12px; border: 1px solid var(--ink); position: relative; z-index: 1;
+}
+.peek-foot { font-family: var(--label); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-top: 10px; text-align: right; }
+
+/* magnetic buttons keep transform smooth */
+.magnetic { will-change: transform; transition: transform .18s ease, background .2s, color .2s; }
+
+/* touch / no-hover: disable peek + spotlight, keep it simple */
+@media (hover: none), (pointer: coarse) {
+  .peek { display: none !important; }
+  .editions.has-hover .entry:not(:hover) { opacity: 1; }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+  .load-1, .load-2, .load-3, .np-line, .plate-rule.draw { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .peek { transition: opacity .01ms; }
+}
