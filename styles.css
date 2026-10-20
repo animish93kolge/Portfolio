@@ -85,7 +85,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--red); outline-o
 
 .nav { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--ink); }
 .nav-inner { max-width: var(--maxw); margin-inline: auto; padding: 12px var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.brand { display: flex; align-items: baseline; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: .01em; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: .01em; }
 .brand .num { font-family: var(--label); font-weight: 600; font-size: .62rem; letter-spacing: .12em; color: var(--red); text-transform: uppercase; align-self: center; }
 .nav-links { display: flex; gap: 26px; align-items: center; }
 .nav-links a { font-family: var(--label); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); padding: 4px 0; position: relative; transition: color .2s; }

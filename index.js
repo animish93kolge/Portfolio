@@ -11,16 +11,6 @@
   /* ---- print-in load ---- */
   requestAnimationFrame(function () { document.body.classList.add("is-ready"); });
 
-  /* ---- live dateline ---- */
-  var dl = document.getElementById("dateline");
-  if (dl) {
-    try {
-      var d = new Date();
-      var s = d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-      dl.textContent = s + " · Mumbai Edition";
-    } catch (e) {}
-  }
-
   /* ---- reading progress ---- */
   var bar = document.getElementById("progress");
   if (bar) {
