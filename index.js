@@ -9,7 +9,9 @@
   var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   /* ---- print-in load ---- */
-  requestAnimationFrame(function () { document.body.classList.add("is-ready"); });
+  if (!document.documentElement.classList.contains("has-cover")) {
+    requestAnimationFrame(function () { document.body.classList.add("is-ready"); });
+  }
 
   /* ---- reading progress ---- */
   var bar = document.getElementById("progress");
@@ -33,16 +35,18 @@
   /* ---- count-up numbers ---- */
   var counts = document.querySelectorAll(".count");
   function animateCount(el) {
+    /* the real value is written in the HTML; we only animate once visible */
     var to = parseFloat(el.getAttribute("data-to")) || 0;
     var pre = el.getAttribute("data-prefix") || "";
     var suf = el.getAttribute("data-suffix") || "";
-    if (reduce) { el.textContent = pre + to + suf; return; }
+    var finalText = pre + to + suf;
+    if (reduce) { el.textContent = finalText; return; }
     var dur = 1100, start = null;
     function step(t) {
       if (!start) start = t;
       var k = Math.min((t - start) / dur, 1);
       var eased = 1 - Math.pow(1 - k, 3);
-      el.textContent = pre + Math.round(to * eased) + suf;
+      el.textContent = k < 1 ? pre + Math.round(to * eased) + suf : finalText;
       if (k < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
@@ -86,7 +90,10 @@
         pKicker.textContent = en.getAttribute("data-kicker") || "";
         pTitle.textContent = en.getAttribute("data-title") || "";
         var soon = en.classList.contains("entry-soon");
-        if (soon) {
+        if (en.classList.contains("entry-static")) {
+          pPhoto.innerHTML = '<span class="peek-metric">' + (en.getAttribute("data-metric") || "") + "</span>";
+          if (pFoot) pFoot.textContent = "Walkthrough on request";
+        } else if (soon) {
           pPhoto.innerHTML = '<span class="peek-metric">Coming soon</span>';
           if (pFoot) pFoot.textContent = "Coming soon";
         } else {

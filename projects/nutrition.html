@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutrition on B, Turning a Glance at a Plate into Nutrition Data · Animish Kolge</title>
+<meta name="description" content="Designing Nutrition for B Glasses: Buddy identifies a dish through the glasses camera, breaks down its nutrition and logs the meal by voice, with a Nutrition card in the companion app.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Design Chronicle, Animish Kolge">
+<meta property="og:title" content="Nutrition on B · Animish Kolge">
+<meta property="og:description" content="Turning a glance at a plate into nutrition data, hands-free, on India's first AI smart glasses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Archivo:wght@500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../casestudy.css">
+</head>
+<body class="cs-clean">
+<a class="skip" href="#csbody">Skip to content</a>
+
+<nav class="nav">
+ <div class="nav-inner">
+ <a href="../index.html" class="brand">Animish&nbsp;Kolge <span class="num">Design Manager</span></a>
+ <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+ <div class="nav-links" id="navLinks">
+ <a href="../index.html#edition">Work</a>
+ <a href="../index.html#ai">AI</a>
+ <a href="../index.html#leadership">How I lead</a>
+ <a href="../index.html#desk">Contact</a>
+ <a href="../assets/Animish_Kolge_Resume.pdf" target="_blank" rel="noopener" class="nav-cta">Résumé</a>
+ </div>
+ </div>
+</nav>
+
+<header class="cs-hero">
+ <div class="wrap">
+ <a href="smart-glasses.html" class="cs-back"><span class="arr">←</span> Back to B by Lenskart</a>
+ <div class="cs-round"><span>Feature Story</span><span class="flag fast">AI · Look and log</span><span class="flag">B by Lenskart</span></div>
+ <h1 class="cs-title">Nutrition on B, turning a glance at a plate into nutrition data</h1>
+ <p class="cs-lede">Buddy, the glasses' voice assistant, identifies a dish through the glasses camera, breaks down its nutrition and logs the meal by voice. The companion app keeps a <b>Nutrition card</b> with daily totals and meal history.</p>
+ <div class="cs-board">
+ <div class="cs-board-cell"><div class="k">Product</div><div class="v" style="font-size:1.05rem">B Glasses + app<small>AjnaLens × Lenskart</small></div></div>
+ <div class="cs-board-cell"><div class="k">Scope</div><div class="v" style="font-size:1.05rem">Phase 1<small>2 user stories</small></div></div>
+ <div class="cs-board-cell"><div class="k">Platforms</div><div class="v" style="font-size:1.05rem">Android &amp; iOS<small>Figma · FigJam</small></div></div>
+ <div class="cs-board-cell"><div class="k">Role</div><div class="v cyan" style="font-size:1.05rem">Design Lead<small>UX · UI · voice</small></div></div>
+ </div>
+ </div>
+</header>
+ <aside class="tldr wrap" aria-label="Case study summary">
+ <div class="tldr-top"><span class="tldr-tag">Quick tea</span><span class="tldr-sub">The whole story in 60 seconds</span><a class="tldr-more" href="#csbody">Read the full story ↓</a></div>
+ <div class="tldr-grid">
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5"/><path d="M12 16.5v.2"/></svg>Problem</span><p>Knowing what you ate takes effort, so most meals pass with no insight. For the business, glasses usage centred on music and calls.</p></div>
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M8.5 11.5L7 21l5-2.5 5 2.5-1.5-9.5"/></svg>My role</span><p>Design Lead with one UX and two UI designers: PRD review, discovery, the end-to-end flow and every UI state.</p></div>
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Key decisions</span><ol><li>Hands-free first: capture starts with a voice command, not a phone</li><li>Confirm, don't assume: nothing is logged without the user's say-so</li><li>Progressive disclosure: calories, then macros, then micros</li></ol></div>
+ <div class="tldr-cell out"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Phase 1 scope</span><p>2 user stories · under 5 s perceived latency · 11 values per meal · 1 year of history</p></div>
+ </div>
+ </aside>
+
+<main class="wrap">
+ <figure class="cs-video n-video">
+ <div class="cs-video-frame">
+ <video id="nutritionVideo" src="../assets/nutrition-intro.mp4" poster="../assets/nutrition-intro-poster.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+ <button class="cs-video-sound" id="soundBtn" type="button" aria-label="Unmute video"><span class="ic">🔊</span> Tap for sound</button>
+ </div>
+ <figcaption>Nutrition on B, look at your plate, ask Buddy, and the meal is logged</figcaption>
+ </figure>
+
+ <div class="cs-body" id="csbody">
+
+ <section class="cs-block">
+ <h2><span class="n">01</span>Overview</h2>
+ <p>Nutrition is an AI feature on B Glasses. A user looks at their plate and asks Buddy <em>"What's on my plate?"</em> or says <em>"Hey Buddy, log my meal!"</em>. Buddy identifies the dish through the glasses camera, breaks down its nutrition, and with the user's confirmation logs it to a <strong>Nutrition card</strong> in the companion app, with daily totals and history by date.</p>
+ <h3 class="cs-sub">Phase 1 at a glance</h3>
+ <div class="n-stats">
+ <div><b>2</b><span>User stories</span></div>
+ <div><b class="red">&lt;5 s</b><span>Perceived latency</span></div>
+ <div><b>11</b><span>Values per meal</span></div>
+ <div><b>1 yr</b><span>Meal history</span></div>
+ </div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">02</span>Where it started</h2>
+ <p>The brief came as a Phase 1 PRD with three pieces to build: a look-and-tell answer to <em>"What's on my plate?"</em>, a voice command to log a meal, and a Nutrition card in the app with daily totals, history by date, and delete.</p>
+ <p>The PRD named two goals, and every design decision had to serve both:</p>
+ <ul class="cs-list">
+ <li><strong>Visualise health insights.</strong> Close the gap between eating and knowing, using the camera and AI to give immediate, actionable data.</li>
+ <li><strong>Increase glasses usage.</strong> Give people a daily, habit-forming reason to use the glasses beyond music and calls.</li>
+ </ul>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">03</span>The problem</h2>
+ <p>Eating happens fast; knowing what you ate takes effort. On a phone, you search a food database, pick a portion and save. By then the meal is over, so <mark class="hl">most meals pass with no insight at all</mark>.</p>
+ <div class="n-cards two"><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><h4>User problem</h4><p>B Glasses users had no hands-free way to understand a meal before the first bite, or to keep a daily record without stopping to type.</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><h4>Business problem</h4><p>Glasses usage centred on music and calls. Without a daily, personal use case, there was little reason to talk to Buddy through the day.</p></div></div>
+ <h3 class="cs-sub">How might we…</h3>
+ <ol class="n-hmw"><li><span>Turn a glance at a plate into nutrition data in <strong>under 5 seconds</strong>?</span></li><li><span>Keep users in control, so <strong>nothing is logged without their confirmation</strong>?</span></li><li><span>Make meal logging a <strong>daily habit</strong> that brings users back to B Glasses?</span></li></ol>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">04</span>My role</h2>
+ <p>I led Nutrition as design lead for B, working with the B design team of one UX and two UI designers. I owned the experience end to end, from reading the PRD to the screens and rules engineering built from.</p>
+ <ul class="cs-list">
+ <li><strong>Requirement review.</strong> Read the Phase 1 PRD against real use and mapped every requirement to a visible design response.</li>
+ <li><strong>Discovery and scenario mapping.</strong> Scanned existing nutrition and smart-glasses experiences and mapped first-time and regular-user scenarios.</li>
+ <li><strong>End-to-end user flow.</strong> One flow covering onboarding, the landing page, dates and delete, with every decision point.</li>
+ <li><strong>UI design.</strong> The first-time experience, every state of the Nutrition landing page, meal detail, history and delete.</li>
+ </ul>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">05</span>Research and discovery</h2>
+ <p>Discovery combined three things: a requirements review of the Phase 1 PRD, a scan of existing nutrition and smart-glasses experiences, and scenario mapping for first-time and regular users. The scan showed every current option breaks down at the same moment, <mark class="hl">the meal itself</mark>.</p>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>Approach</th><th>How it works</th><th>Gap</th></tr></thead><tbody><tr><th>Manual phone trackers</th><td>Search a food database, choose portion, save</td><td>High effort per meal; easy to abandon</td></tr><tr><th>Phone-camera AI trackers</th><td>Snap a photo with the phone for an estimate</td><td>Phone must come out mid-meal</td></tr><tr><th>Glasses look-and-tell</th><td>Ask the assistant what it sees</td><td>Answers, but no structured nutrients or history</td></tr><tr><th><span style='color:var(--red)'>B Glasses Nutrition</span></th><td>Voice + glasses camera + app card</td><td>Hands-free capture, confirmed log, daily history</td></tr></tbody></table></div>
+ <h3 class="cs-sub">Insights that became design principles</h3>
+ <div class="n-cards two"><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><span class="n-num">01</span><h4>Hands-free first</h4><p>The meal is the moment. Capture starts with a voice command, not a phone.</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/></svg></span><span class="n-num">02</span><h4>Confirm, don't assume</h4><p>Ask when an item is ambiguous, and never log without explicit consent.</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="n-num">03</span><h4>Glanceable, not clinical</h4><p>Lead with calories, then macros, then micros on demand.</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span><span class="n-num">04</span><h4>Earn trust</h4><p>Use exact brand data when known, and say clearly that values are AI-generated.</p></div></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">06</span>Competitive landscape: direct and indirect</h2>
+ <p>Food recognition from a photo is fast becoming a commodity. The real competition is over <strong>when capture happens, who stays in control, and what brings people back</strong>. That reframing shaped Phase 1 more than any single feature did.</p>
+ <h3 class="cs-sub">How I mapped the market</h3>
+ <p>I didn't want a feature checklist. I mapped competitors in two rings and judged each one through the same five questions a user lives through at the table:</p>
+ <div class="n-cards five"><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></svg></span><span class="n-num">01</span><h4>Capture</h4><p>Does the person have to stop eating to log?</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="3"/></svg></span><span class="n-num">02</span><h4>Control</h4><p>Who confirms what gets saved, the AI or the user?</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.2a2.5 2.5 0 1 1 3.6 2.2c-.8.4-1.2 1-1.2 1.8"/><path d="M12 16.8v.2"/></svg></span><span class="n-num">03</span><h4>Uncertainty</h4><p>How does the product behave when it isn't sure?</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/></svg></span><span class="n-num">04</span><h4>Context</h4><p>Does it understand a multi-dish Indian plate?</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a8 8 0 0 1 14-4.5L20 9"/><path d="M20 4v5h-5"/><path d="M20 13a8 8 0 0 1-14 4.5L4 15"/><path d="M4 20v-5h5"/></svg></span><span class="n-num">05</span><h4>Return</h4><p>What brings the person back tomorrow?</p></div></div>
+ <p style="margin-top:14px"><strong>Direct competitors</strong> solve the same job on the same form factor: AI glasses that log food. <strong>Indirect competitors</strong> solve the same job another way: phone-camera AI trackers and manual logging apps. Our users already know these, so they set the bar for expectations.</p>
+
+ <h3 class="cs-sub">Direct: AI glasses</h3>
+ <p><strong>Ray-Ban Meta and Oakley Meta.</strong> The closest benchmark. In April 2026 Meta announced food logging by voice prompt or quick photo, with Meta AI extracting nutrition details into a food log in the Meta AI app (<a class="cs-cite" href="https://9to5google.com/2026/04/06/metas-smart-glasses-will-watch-what-you-eat-to-track-nutrition-data/" target="_blank" rel="noopener">9to5Google</a>). It launched for US users aged 18+, and users still prompt Meta AI and set nutrition goals themselves; automatic logging is promised for later (<a class="cs-cite" href="https://www.roadtovr.com/meta-health-food-logging-ray-ban-smart-glasses/" target="_blank" rel="noopener">Road to VR</a>).</p>
+ <div class="n-callout"><span class="n-callout-lab">What it told me</span><p>Hands-free capture alone is not a moat. The global leader is moving the same way, so B has to win on the experience around capture: confirmation, clarification and local context.</p></div>
+
+ <h3 class="cs-sub">Indirect: phone-camera AI trackers</h3>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>Product</th><th>How capture works</th><th>What stood out for design</th></tr></thead><tbody><tr><th>HealthifyMe Snap</th><td>Phone photo; trained on 150,000 Indian food items (<a class="cs-cite" href="https://techcrunch.com/2023/09/21/khosla-backed-healtifyme-introduces-ai-powered-image-recognition-for-indian-food/" target="_blank" rel="noopener">TechCrunch</a>)</td><td>Built for Indian plates. With several items in one photo, users select and track each in an adjustable box (<a class="cs-cite" href="https://cxotoday.com/media-coverage/owled-media-partners-with-healthifyme-to-introduce-ai-powered-image-recognition-for-indian-food/" target="_blank" rel="noopener">CXOToday</a>)</td></tr><tr><th>MyFitnessPal Meal Scan</th><td>Hover the phone camera over the plate</td><td>Not fully automatic: users confirm foods, portion and nutrition before saving (<a class="cs-cite" href="https://brainstation.io/magazine/myfitnesspal-introduces-ai-photo-recognition" target="_blank" rel="noopener">BrainStation</a>)</td></tr><tr><th>Cal AI</th><td>Photo, barcode scan, or describe the meal in words</td><td>Subscription model; acquired by MyFitnessPal in late 2025, a signal of how valuable photo logging has become (<a class="cs-cite" href="https://neuronfeed.com/startups/cal-ai" target="_blank" rel="noopener">NeuronFeed</a>)</td></tr></tbody></table></div>
+ <div class="n-callout"><span class="n-callout-lab">What it told me</span><p>Every leader keeps a human confirmation step, which validated our <em>"Confirm, don't assume"</em> principle. And all of them still need the phone out mid-meal, which is exactly the moment B Glasses removes.</p></div>
+
+ <h3 class="cs-sub">Indirect: manual logging</h3>
+ <p>Classic trackers ask people to search a database, pick a portion and save. Even the photo-first apps market themselves against this: HealthifyMe says food tracking is hard to engage with because users have to type and remember to log (<a class="cs-cite" href="https://cxotoday.com/media-coverage/owled-media-partners-with-healthifyme-to-introduce-ai-powered-image-recognition-for-indian-food/" target="_blank" rel="noopener">CXOToday</a>). </p>
+ <blockquote class="n-pull">Effort per meal is the churn driver.</blockquote>
+
+ <h3 class="cs-sub">Where B Glasses can win</h3>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>Question</th><th>Phone AI trackers</th><th>Meta glasses</th><th>B Glasses Nutrition</th></tr></thead><tbody><tr><th>Capture</th><td>Phone comes out mid-meal</td><td>Voice or photo, hands-free</td><td><strong style='color:var(--red)'>Voice + glasses camera, hands-free</strong></td></tr><tr><th>Control</th><td>User confirms in app</td><td>User prompts Meta AI to log</td><td><strong style='color:var(--red)'>Buddy confirms the dish by voice before saving</strong></td></tr><tr><th>Uncertainty</th><td>User swipes alternatives or edits</td><td>Not public</td><td><strong style='color:var(--red)'>Buddy asks a follow-up ("milk or yogurt?"); AI-generated label on every view</strong></td></tr><tr><th>Indian plates</th><td>Strong in HealthifyMe</td><td>US launch first</td><td><strong style='color:var(--red)'>Designed around Indian dishes and branded snacks</strong></td></tr><tr><th>Return</th><td>Diary and goals</td><td>Food log in Meta AI app</td><td><strong style='color:var(--red)'>Daily Nutrition card and 1-year history; goals and trends are next</strong></td></tr></tbody></table></div>
+ <div class="n-callout red"><span class="n-callout-lab">The decision</span><p>As a design lead, the decision this drove was simple. <strong>We would not compete on recognition accuracy</strong>, which belongs to the AI team and improves on its own. <strong>We would compete on the moment of capture and on trust</strong>, the two places design owns end to end.</p></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">07</span>Users and scenarios</h2>
+ <p>One feature, two very different users. Each meets Nutrition through a different moment, and the design had to answer different questions for each.</p>
+ <div class="us-pair">
+ <article class="us-card">
+ <header><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17v4M17 19h4"/></svg></span><div><span class="n-tag">First-time user</span><h4>Learn the feature quickly</h4></div></header>
+ <ul class="us-q"><li>What do I say, and when is Buddy listening?</li><li>What happens after the photo?</li><li>Where will I find my data?</li></ul>
+ <p class="us-path"><span>Meets it through</span>The two-page intro and <b>Try Now</b>, a guided first log</p>
+ </article>
+ <article class="us-card">
+ <header><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><span class="n-tag">Regular user</span><h4>A fast review of the day</h4></div></header>
+ <ul class="us-q"><li>How much have I eaten today, and of what?</li><li>What did I eat on a past date?</li><li>How do I remove a wrong log?</li></ul>
+ <p class="us-path"><span>Meets it through</span>The <b>Nutrition landing page</b>: daily totals, dates and meal detail</p>
+ </article>
+ </div>
+ <h3 class="cs-sub">Two user stories, two voice moments</h3>
+ <div class="vc-pair">
+ <article class="vc">
+ <div class="vc-head"><span class="vc-id">Story 4.1</span><b>Meal photo breakdown</b></div>
+ <div class="vc-say"><span class="vc-who">User</span><p>“What's on my plate?”<small>or “How many calories are in this dish?”</small></p></div>
+ <div class="vc-buddy"><span class="vc-who">Buddy</span><ol class="vc-steps"><li>Names at least <b>3 ingredients</b></li><li>Gives <b>calories, macros and micros</b></li><li><b>Offers to log</b> the meal</li></ol></div>
+ </article>
+ <article class="vc">
+ <div class="vc-head"><span class="vc-id">Story 4.2</span><b>Log my meal</b></div>
+ <div class="vc-say"><span class="vc-who">User</span><p>“Hey Buddy, log my meal!”</p></div>
+ <div class="vc-buddy"><span class="vc-who">Buddy</span><ol class="vc-steps"><li><b>Confirms the dish</b> by voice</li><li>Replies with its <b>nutrition</b></li><li><b>Saves it</b> to the Nutrition card by date</li></ol></div>
+ </article>
+ </div>
+ <div class="n-callout"><span class="n-callout-lab">Why it matters</span><p>Both stories end with the user in control: 4.1 <em>offers</em> to log, 4.2 <em>confirms</em> before saving. Nothing reaches the Nutrition card without the user's say-so.</p></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">08</span>Edge cases and constraints</h2>
+ <p>A voice feature on a camera wearable fails in real-world ways a phone app never sees. Each one had a defined answer before build.</p>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>Situation</th><th>How it's handled</th></tr></thead><tbody><tr><th>Ambiguous item</th><td>Buddy asks a follow-up, e.g. <em>"Is this milk or yogurt?"</em></td></tr><tr><th>Branded snack</th><td>Exact brand data first, generic estimate second</td></tr><tr><th>Dirty lens</th><td>Unclear image is treated as an edge case</td></tr><tr><th>Battery below 10%</th><td>Feature unavailable</td></tr><tr><th>No Bluetooth or weak network</th><td>Feature needs both to work</td></tr><tr><th>Logout, then login</th><td>Meal history resyncs</td></tr><tr><th>Account deleted</th><td>Nutrition data is erased</td></tr></tbody></table></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">09</span>User flow</h2>
+ <p>One flow covers both users. A returning-user check skips onboarding; date selection, empty states and deletion all branch off the Nutrition landing page.</p>
+ <figure class="cs-flow n-flow">
+ <figcaption class="cs-flow-cap">End-to-end flow · entry, first-time onboarding, landing page, dates and delete</figcaption>
+ <div class="cs-flow-scroll"><img src="../assets/nutrition/user-flow.jpg" alt="Nutrition user flow: start, tap Nutrition on B features card, returning user check, two-page intro carousel, Try Now or View Logged Meals, listening, glasses capture, analysing, insights explainer, Got it, Nutrition landing page, change date via calendar sheet, meals logged check, empty state or totals and meal list, meal detail, delete confirmation, end" loading="lazy"></div>
+ </figure>
+ <p class="cs-flow-hint" aria-hidden="true">↔ Scroll sideways to follow the flow · click to enlarge</p>
+ <p style="margin-top:16px"><strong>Decision points</strong></p>
+ <ul class="cs-chips"><li>Returning user?</li><li>Which CTA tapped?</li><li>Change date?</li><li>Meals logged on date?</li><li>Confirm delete?</li></ul>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">10</span>First-time experience: teach the command, show the payoff</h2>
+ <p>A new user has never spoken to their glasses about food. Five screens teach the exact phrase, show what the glasses are doing, and end on where the results will live.</p>
+ <ul class="cs-list">
+ <li><strong>Intro.</strong> A real meal moment and the exact phrase to say, with two paths: Try Now or View Logged Meals.</li>
+ <li><strong>How it works.</strong> What the glasses and Buddy do after capture: photo, identification, nutrition estimate, and where to view it.</li>
+ <li><strong>Listening.</strong> Speak after the tone; the LED blinks pink, so the glasses' state matches the screen.</li>
+ <li><strong>Analysing.</strong> Sets expectations for the wait and points to the dashboard, where the status shows.</li>
+ <li><strong>Where insights live.</strong> A preview of the landing page, closed with "Got it!"</li>
+ </ul>
+ <div class="phone-strip"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-01.jpg" alt="Nutrition, Intro screen" loading="lazy"></div></div><div class="iphone-cap">Intro</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-02.jpg" alt="Nutrition, How it works screen" loading="lazy"></div></div><div class="iphone-cap">How it works</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-03.jpg" alt="Nutrition, Listening screen" loading="lazy"></div></div><div class="iphone-cap">Listening</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-04.jpg" alt="Nutrition, Analysing screen" loading="lazy"></div></div><div class="iphone-cap">Analysing</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-05.jpg" alt="Nutrition, Where insights live screen" loading="lazy"></div></div><div class="iphone-cap">Where insights live</div></div></div><p class="phone-strip-hint" aria-hidden="true">Swipe sideways for all screens, scroll a screen for its full height</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">11</span>Nutrition landing page: every state of the day</h2>
+ <p>The landing page is where a regular user spends their time, so every state of the day had to be clearly signalled.</p>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>State</th><th>What the user sees</th></tr></thead><tbody><tr><th>Empty</th><td>"Nothing on your plate yet" with the voice command in Buddy's gradient</td></tr><tr><th>Analysing</th><td>The new meal appears as a processing row, so nothing blocks the user</td></tr><tr><th>Logged</th><td>Calories, then macros, then the meal list with time and calories</td></tr><tr><th>Expanded</th><td>View More reveals micronutrients; View Less folds them back</td></tr></tbody></table></div>
+ <div class="phone-strip"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-06.jpg" alt="Nutrition, Empty state screen" loading="lazy"></div></div><div class="iphone-cap">Empty</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-07.jpg" alt="Nutrition, Analysing state screen" loading="lazy"></div></div><div class="iphone-cap">Analysing</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-08.jpg" alt="Nutrition, Logged state screen" loading="lazy"></div></div><div class="iphone-cap">Logged</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-09.jpg" alt="Nutrition, Expanded state screen" loading="lazy"></div></div><div class="iphone-cap">Expanded</div></div></div><p class="phone-strip-hint" aria-hidden="true">Swipe sideways for all screens, scroll a screen for its full height</p>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">12</span>Meal detail, history and delete</h2>
+ <p>Review any day, correct any mistake.</p>
+ <ul class="cs-list">
+ <li><strong>Meal detail.</strong> Time, dish, calories, macros and micros for one meal; delete sits top right.</li>
+ <li><strong>Pick a date.</strong> A calendar sheet with Cancel and Apply loads a past day.</li>
+ <li><strong>Delete meal.</strong> A confirmation sheet explains that the meal's calories and nutrition data will be removed.</li>
+ </ul>
+ <div class="phone-strip"><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-10.jpg" alt="Nutrition, Meal detail screen" loading="lazy"></div></div><div class="iphone-cap">Meal detail</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-11.jpg" alt="Nutrition, Pick a date screen" loading="lazy"></div></div><div class="iphone-cap">Pick a date</div></div><div class="iphone"><div class="iphone-body"><div class="iphone-screen"><div class="iphone-island"></div><img src="../assets/nutrition/nutrition-12.jpg" alt="Nutrition, Delete meal screen" loading="lazy"></div></div><div class="iphone-cap">Delete meal</div></div></div><p class="phone-strip-hint" aria-hidden="true">Swipe sideways for all screens, scroll a screen for its full height</p>
+ <p style="margin-top:16px"><strong>Date picker rules.</strong> Only dates up to today can be selected, future dates are disabled, and a dot marks days with logged meals. That gives five date states:</p>
+ <ul class="cs-chips"><li>Active</li><li>Meal logged</li><li>Disabled</li><li>Selected</li><li>Today</li></ul>
+ <figure class="cs-figure"><div class="ph-fig ">Date states<small>drop the image here</small></div><figcaption>The five date states in the calendar sheet</figcaption></figure>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">13</span>Key design decisions</h2>
+ <div class="n-cards two"><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><h4>Dark, calm interface</h4><p>Matches the B Glasses app and keeps food photos and numbers in focus</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11v2M8 8v8M12 5v14M16 8v8M20 11v2"/></svg></span><h4>Buddy's voice in gradient</h4><p>Every voice prompt uses the same purple gradient, so users learn what to say</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h4>Progressive disclosure</h4><p>Calories first, macros next, micros behind View More, so the screen stays glanceable</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span><h4>Visible system status</h4><p>Listening, Analysing and Logged states mirror what the glasses are doing</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></span><h4>Safe deletion</h4><p>Delete always asks for confirmation and explains that nutrition data is removed</p></div><div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7.5v.2"/></svg></span><h4>Honest about AI</h4><p>Each nutrition view says values are AI-generated and may vary in accuracy</p></div></div>
+ <div class="n-callout red"><span class="n-callout-lab">The biggest trade-off</span><p><strong>Speed against control.</strong> Logging should feel instant, but a wrong log damages trust. So Buddy confirms the dish by voice before saving, and the Analysing row keeps the app usable while that happens.</p></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">14</span>Requirements to design</h2>
+ <p>Every PRD requirement has a visible answer in the experience.</p>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>PRD requirement</th><th>Design response</th></tr></thead><tbody><tr><th>Image trigger: wake word + intent</th><td>"Hey Buddy, log my meal" taught in onboarding; Listening screen and pink LED cue</td></tr><tr><th>Calories, macros and micros</th><td>Total intake card, macro row with icons, micronutrient list</td></tr><tr><th>Clarification dialogue</th><td>Buddy asks a follow-up by voice; the exchange is saved as an AI transcript</td></tr><tr><th>Explicit confirmation before logging</th><td>Buddy confirms the dish by voice before the meal is saved</td></tr><tr><th>Perceived latency under 5 s</th><td>Analysing row in Your Meals keeps the app usable while processing</td></tr><tr><th>Meal logs by date, deletable</th><td>Date chevron and calendar sheet; meal detail with delete confirmation</td></tr><tr><th>Branded snacks</th><td>Exact brand data takes priority over a generic estimate</td></tr><tr><th>Data deletion and resync</th><td>Account deletion erases nutrition data; history returns after re-login</td></tr></tbody></table></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">15</span>Measuring success and next steps</h2>
+ <div class="n-cols"><div><h4>What we'll track after launch</h4><ul><li>Meals logged per active user per week</li><li>Share of capture sessions that end in a confirmed log</li><li>Days per week a user talks to Buddy about food</li><li>Glasses sessions beyond music and calls</li><li>Meals deleted soon after logging, as an accuracy signal</li></ul></div><div><h4>Next steps, building on Phase 1</h4><ul><li>Usability test the first-time flow and voice prompts</li><li>Let users edit a dish or portion, not only delete it</li><li>Feed nutrition data into the upcoming Memory layer</li><li>Add daily goals and weekly trends to the Nutrition card</li><li>Show the clarification transcript inside meal detail</li></ul></div></div>
+ <p class="cs-tagline">See your food. <span>Know your food.</span></p>
+ </section>
+
+ <section class="cs-block cs-sources">
+ <h2>Sources</h2>
+ <ul>
+ <li><a href="https://9to5google.com/2026/04/06/metas-smart-glasses-will-watch-what-you-eat-to-track-nutrition-data/" target="_blank" rel="noopener">Meta's smart glasses will watch what you eat to track nutrition data</a>, 9to5Google</li>
+ <li><a href="https://www.roadtovr.com/meta-health-food-logging-ray-ban-smart-glasses/" target="_blank" rel="noopener">Meta Inches Into Health Wearables with New Food Logging Feature</a>, Road to VR</li>
+ <li><a href="https://techcrunch.com/2023/09/21/khosla-backed-healtifyme-introduces-ai-powered-image-recognition-for-indian-food/" target="_blank" rel="noopener">HealthifyMe introduces AI-powered image recognition for Indian food</a>, TechCrunch</li>
+ <li><a href="https://cxotoday.com/media-coverage/owled-media-partners-with-healthifyme-to-introduce-ai-powered-image-recognition-for-indian-food/" target="_blank" rel="noopener">OWLED Media partners with HealthifyMe on Snap</a>, CXOToday</li>
+ <li><a href="https://brainstation.io/magazine/myfitnesspal-introduces-ai-photo-recognition" target="_blank" rel="noopener">MyFitnessPal Introduces AI Photo Recognition</a>, BrainStation</li>
+ <li><a href="https://neuronfeed.com/startups/cal-ai" target="_blank" rel="noopener">What is Cal AI?</a>, NeuronFeed</li>
+ </ul>
+ </section>
+ </div>
+</main>
+
+<div class="wrap cs-next">
+ <a href="smart-glasses.html">
+ <div><div class="lab">Back to →</div><div class="nm">B by Lenskart</div></div>
+ <span class="cs-back" style="margin:0"><span class="arr" style="transform:none">→</span></span>
+ </a>
+</div>
+
+<footer class="foot">
+ <div class="wrap foot-inner">
+ <span class="foot-meta">Animish Kolge · The Design Chronicle · © 2026</span>
+ <div class="foot-links">
+ <a href="mailto:animish.kolge@gmail.com">Email</a>
+ <a href="https://www.linkedin.com/in/animish-kolge">LinkedIn</a>
+ <a href="../index.html">Home</a>
+ </div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var v=document.getElementById("nutritionVideo"), b=document.getElementById("soundBtn");
+ if(!v||!b) return;
+ function enableSound(){ v.muted=false; v.volume=1; var p=v.play(); if(p&&p.catch)p.catch(function(){}); b.classList.add("hidden"); }
+ b.addEventListener("click", enableSound);
+ v.addEventListener("volumechange", function(){ if(!v.muted) b.classList.add("hidden"); });
+})();
+</script>
+<script src="../script.js"></script>
+<script src="../cs-enhance.js"></script>
+</body>
+</html>

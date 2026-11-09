@@ -3,67 +3,233 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teacher Attendance · Animish Kolge</title>
-<meta name="description" content="An attendance and leave system for school teachers — mark daily attendance, apply for leave, and let admins approve and maintain the records, all in a couple of taps.">
+<title>Teno Teacher Attendance, From WhatsApp Pings to a Shift Engine · Animish Kolge</title>
+<meta name="description" content="Rebuilding teacher attendance for Indian schools: a web console for admins and a mobile flow for teachers that turns daily guesswork into rules set once.">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="Animish Kolge — Design Lead">
-<meta property="og:title" content="Teacher Attendance · Animish Kolge">
-<meta property="og:description" content="An attendance and leave system for school teachers — mark daily attendance, apply for leave, and let admins approve and maintain the records, all in a couple of taps.">
+<meta property="og:site_name" content="The Design Chronicle, Animish Kolge">
+<meta property="og:title" content="Teno Teacher Attendance · Animish Kolge">
+<meta property="og:description" content="Rebuilding teacher attendance for Indian schools: a web console for admins and a mobile flow for teachers that turns daily guesswork into rules set once.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Archivo:wght@500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../casestudy.css">
 </head>
-<body>
+<body class="cs-clean">
 <a class="skip" href="#csbody">Skip to content</a>
 
 <nav class="nav">
-  <div class="nav-inner">
-    <a href="../index.html" class="brand">Animish&nbsp;Kolge <span class="num">Design Leader</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
-    <div class="nav-links" id="navLinks">
-      <a href="../index.html#edition">Work</a>
-      <a href="../index.html#profile">Profile</a>
-      <a href="../index.html#toolkit">Toolkit</a>
-      <a href="../index.html#desk">Contact</a>
-      <a href="../assets/Animish_Kolge_Resume.pdf" target="_blank" rel="noopener" class="nav-cta">Résumé</a>
-    </div>
-  </div>
+ <div class="nav-inner">
+ <a href="../index.html" class="brand">Animish&nbsp;Kolge <span class="num">Design Manager</span></a>
+ <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+ <div class="nav-links" id="navLinks">
+ <a href="../index.html#edition">Work</a>
+ <a href="../index.html#ai">AI</a>
+ <a href="../index.html#leadership">How I lead</a>
+ <a href="../index.html#desk">Contact</a>
+ <a href="../assets/Animish_Kolge_Resume.pdf" target="_blank" rel="noopener" class="nav-cta">Résumé</a>
+ </div>
+ </div>
 </nav>
 
 <header class="cs-hero">
-  <div class="wrap">
-    <a href="../index.html#edition" class="cs-back"><span class="arr">←</span> Back to the edition</a>
-    <div class="cs-round"><span>No. 04</span><span class="flag ">Teno · EdTech</span><span>Teno App</span></div>
-    <h1 class="cs-title">Teacher Attendance</h1>
-    <p class="cs-lede">An attendance &amp; leave system for <b>school teachers</b> — mark daily attendance, apply for leave, and let admins approve and maintain the records, all in a couple of taps.</p>
-    </div>
+ <div class="wrap">
+ <a href="../index.html#edition" class="cs-back"><span class="arr">←</span> Back to the edition</a>
+ <div class="cs-round"><span>Featured Story</span><span class="flag fast">EdTech · 2021–22</span><span class="flag">Teno · Propellum</span></div>
+ <h1 class="cs-title t-wide">From WhatsApp pings to<br class="t-br"> a shift engine</h1>
+ <p class="cs-lede t-lede t-full">Rebuilding teacher attendance for Indian schools.</p>
+ <p class="t-intro t-full">When schools went remote in 2021, attendance moved into WhatsApp groups and admins were left reconciling it by hand. I designed Teno's Teacher Attendance module, a <b>web console for admins</b> and a <b>mobile flow for teachers</b>, that turns daily guesswork into rules set once.</p>
+ <div class="cs-board">
+ <div class="cs-board-cell"><div class="k">Product</div><div class="v" style="font-size:1.05rem">Teno<small>School app · web + Android/iOS</small></div></div>
+ <div class="cs-board-cell"><div class="k">Users</div><div class="v" style="font-size:1.05rem">Admins + teachers<small>Web console · mobile app</small></div></div>
+ <div class="cs-board-cell"><div class="k">Methods</div><div class="v" style="font-size:1.05rem">Research → testing<small>Interviews · surveys · IA · usability</small></div></div>
+ <div class="cs-board-cell"><div class="k">Role</div><div class="v cyan" style="font-size:1.05rem">Product Designer<small>End to end</small></div></div>
+ </div>
+ <figure class="cs-figure np-photo np-lead np-crop"><div class="np-ink"><img src="../assets/teno-attendance/banner.jpg" alt="Teno admin web console screens: Attendance home, Create shift, Set holiday calendar, Shift list and Approvals" loading="eager"></div><figcaption>Teno Teacher Attendance · The admin web console: attendance home, create shift, holiday calendar, shift list and approvals</figcaption></figure>
+ </div>
 </header>
+ <aside class="tldr wrap" aria-label="Case study summary">
+ <div class="tldr-top"><span class="tldr-tag">Quick tea</span><span class="tldr-sub">The whole story in 60 seconds</span><a class="tldr-more" href="#csbody">Read the full story ↓</a></div>
+ <div class="tldr-grid">
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5"/><path d="M12 16.5v.2"/></svg>Problem</span><p>When schools went remote in 2021, attendance moved to WhatsApp. Admins copied times into Excel and worked out hours by hand.</p></div>
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M8.5 11.5L7 21l5-2.5 5 2.5-1.5-9.5"/></svg>My role</span><p>Product designer, end to end, in a team of three: research, IA, wireframes, hi-fi and usability testing.</p></div>
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Key decisions</span><ol><li>The shift holds the rules, so admins decide once</li><li>Holidays as reusable calendars for any state or school</li><li>Approvals split by type and cleared in bulk</li></ol></div>
+ <div class="tldr-cell out"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Outcome</span><p>Schools moved from WhatsApp + Excel to in-app, self-marked attendance · 6 admin test sessions led to six design fixes</p></div>
+ </div>
+ </aside>
 
 <main class="wrap">
-  <div class="cs-soon">
-    <span class="cs-soon-badge">Coming soon</span>
-    <h2 class="cs-soon-title">This case study is on its way.</h2>
-    <p class="cs-soon-text">I'm writing up the full story — the research, the process and the outcomes. Check back shortly, or reach out and I'll happily walk you through it.</p>
-    <div class="cs-soon-actions">
-      <a href="../index.html#edition" class="btn btn-primary">← Back to the edition</a>
-      <a href="mailto:animish.kolge@gmail.com" class="btn btn-ghost">Email me</a>
-    </div>
-  </div>
+ <div class="cs-body" id="csbody">
+
+ <section class="cs-block">
+ <h2><span class="n">01</span>The problem</h2>
+ <p><strong>The pandemic broke the attendance register.</strong> With teachers working from home, there was no biometric machine or sign-in sheet left, so schools fell back on WhatsApp: each teacher texted a login and logout time, and the admin copied them into Excel at day's end.</p>
+ <p>That workaround failed in three ways:</p>
+ <div class="n-cards three">
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></span><h4>Late or missing data</h4><p>Teachers forgot to post, or posted hours later, so admins chased people every evening.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg></span><h4>Manual maths</h4><p>Admins worked out each teacher's hours to decide full day or half day, one by one.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5h10M7 9h10M7 5c5 0 7 1.5 7 4s-3 4-7 4l7 6"/></svg></span><h4>Payroll errors</h4><p>Patchy records made salary calculation slow and, at times, wrong.</p></div>
+ </div>
+ <p style="margin-top:18px">Multiple schools asked Teno for the same thing: a way for teachers to mark their own attendance, and for admins to approve it and keep the record.</p>
+ <div class="n-callout red"><span class="n-callout-lab">The brief</span><p>Design a system where <strong>teachers mark daily attendance and leave on mobile</strong>, and <strong>admins approve and maintain that data on the web</strong>.</p></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">02</span>What we heard</h2>
+ <p>Before designing anything, I ran open-ended interviews with admins and teachers, backed by a survey and a competitive benchmark of attendance tools. Sample: <strong>8 admins and 40 teachers across 8 schools</strong>, plus <strong>121 survey responses</strong>. The interviews were in Hindi and Marathi, <mark class="hl">school staff working in their own languages</mark>, not office workers used to HR software.</p>
+ <div class="t-quotes">
+ <figure class="t-quote"><blockquote lang="hi">“सब का attendance मुझे मार्क करना पड़ता है।”</blockquote><p>“I have to mark everyone's attendance myself.”</p><figcaption>School admin · Hindi</figcaption></figure>
+ <figure class="t-quote"><blockquote lang="mr">“कधी कधी मी विसरून जातो ॲडमिनला inform करायला की मी logged out केलं…”</blockquote><p>“Sometimes I forget to tell the admin I've logged out.”</p><figcaption>Teacher · Marathi</figcaption></figure>
+ </div>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>Finding</th><th>Heard from</th></tr></thead><tbody><tr><th>Admins were the human database, re-entering every WhatsApp message into Excel</th><td><span class='t-pill'>Admins</span></td></tr><tr><th>Teachers forgot to report in and out times, and nothing reminded them</th><td><span class='t-pill alt'>Teachers</span></td></tr><tr><th>Full day vs half day was calculated by hand for each teacher, every day</th><td><span class='t-pill'>Admins</span></td></tr><tr><th>Messy records turned payroll into a slow, error-prone task</th><td><span class='t-pill'>Admins</span></td></tr></tbody></table></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">03</span>Two people, two screens</h2>
+ <div class="t-personas">
+ <article class="t-persona">
+ <img src="../assets/teno-attendance/persona-pranav.jpg" alt="Illustrated portrait of Pranav Sharma" loading="lazy">
+ <div>
+ <h4>Pranav Sharma, 38</h4><span class="n-tag">School admin · Desktop</span>
+ <dl>
+ <dt>Context</dt><dd>13 years running admin at a mid-size school; keen on tools that cut his workload</dd>
+ <dt>Today</dt><dd>Collects WhatsApp check-ins, types them into Excel, works out hours</dd>
+ <dt>Needs</dt><dd>Teachers mark their own attendance; he only approves; the data stays clean</dd>
+ </dl></div>
+ </article>
+ <article class="t-persona">
+ <img src="../assets/teno-attendance/persona-suvidha.jpg" alt="Illustrated portrait of Suvidha Mane" loading="lazy">
+ <div>
+ <h4>Suvidha Mane, 48</h4><span class="n-tag">High-school teacher · Phone</span>
+ <dl>
+ <dt>Context</dt><dd>26 years teaching history and Marathi to classes 8–10; carries most of the household load</dd>
+ <dt>Today</dt><dd>Forgets to post her times on busy days, then backfills them from memory</dd>
+ <dt>Needs</dt><dd>A reminder when she hasn't marked in or out, and an easy way to fix a missed day</dd>
+ </dl></div>
+ </article>
+ </div>
+ <div class="t-hmw"><span>How might we</span><p>let teachers record their day in seconds, and let admins approve a whole school's attendance <em>without doing the maths themselves</em>?</p></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">04</span>Design goals</h2>
+ <div class="n-cards three">
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><span class="n-num">01</span><h4>Set rules once, not decisions daily</h4><p>If the admin defines timings, late marks and holidays up front, the system can judge full day, half day or late on its own.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 9a2 2 0 0 1 4 0v3a6 6 0 0 1-6 6h-1a5 5 0 0 1-4.3-2.5L4 12.5a1.6 1.6 0 0 1 2.6-1.8L9 13"/></svg></span><span class="n-num">02</span><h4>Make the right action the easy one</h4><p>Marking in and out should take one tap, with a nudge when it's missed and a clear route to fix it.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-5 9 5-9 5z"/><path d="M7 12.5V17c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></span><span class="n-num">03</span><h4>Fit how schools actually run</h4><p>Multiple timings, regional holidays and local leave policies had to be expressible, not forced into one template.</p></div>
+ </div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">05</span>Structuring the system</h2>
+ <p>I mind-mapped the admin and teacher sides together, then cut the result into a site map. The key move: <mark class="hl">the shift became the parent object</mark>. Every rule a school cares about, week-off, in and out time, late mark, half day, holidays, which teachers, lives inside a shift, so one school can run several timings without extra setup.</p>
+ <figure class="cs-figure np-photo "><div class="np-ink"><img src="../assets/teno-attendance/mind-map.jpg" alt="Mind map of the admin and teacher sides of attendance" loading="lazy"></div><figcaption>Brainstorm · Mind map of the admin side (shift creation, holidays, approvals) and the teacher side (daily attendance, leave, regularisation)</figcaption></figure>
+ <h3 class="cs-sub">Attendance became one branch with three clear jobs</h3>
+ <figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/teno-attendance/site-map.jpg" alt="Site map: Dashboard branches into Group message, Fee payment, Attendance, Class marks and Other features; Attendance holds Teacher attendance, Student attendance and Holiday calendar; Teacher attendance holds Create shift, Attendance approval and Shift list" loading="lazy"></div><figcaption>Site map · Approval sits under Teacher attendance and splits into three tabs, so an admin clears one kind of request at a time.</figcaption></figure>
+ <h3 class="cs-sub">The admin's core task flow, from login to a cleared queue</h3>
+ <figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/teno-attendance/task-flow.jpg" alt="Task flow: Start, Dashboard, Attendance, Teacher attendance, Attendance approval, Daily approval pre-selected, select teacher, approve or reject, stop" loading="lazy"></div><figcaption>Task flow · Dashboard → Attendance → Teacher attendance → Attendance approval → Daily (pre-selected) → Select teachers → Approve / reject</figcaption></figure>
+ <h3 class="cs-sub">User flow</h3>
+ <figure class="cs-figure np-photo tall"><div class="np-ink"><img src="../assets/teno-attendance/user-flow.jpg" alt="User flow from Dashboard to Daily approval, with the approve or reject decision for each teacher's attendance" loading="lazy"></div><figcaption>User flow · From the dashboard to a cleared daily approval, with approve / reject for each teacher</figcaption></figure>
+ <figure class="cs-figure np-photo "><div class="np-ink"><img src="../assets/teno-attendance/sketches.jpg" alt="Lo-fi paper sketches of the admin web and teacher mobile screens" loading="lazy"></div><figcaption>Lo-fi sketches · Admin web (left) and teacher mobile (right), sketched on paper before any pixels</figcaption></figure>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">06</span>Four decisions that carry the design</h2>
+ <figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/teno-attendance/attendance-home.jpg" alt="Attendance home with Teacher attendance, Student attendance and Set holiday calendar" loading="lazy"></div><figcaption>Attendance home · the entry point: teacher attendance, student attendance and the holiday calendar</figcaption></figure>
+ <div class="t-dec">
+ <div class="t-dec-head"><span class="t-dec-n">Decision 1</span><h3>The shift holds the rules</h3></div>
+ <div class="t-shots"><figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/teno-attendance/create-shift.jpg" alt="Create Shift form for 1st Shift" loading="lazy"></div><figcaption>Create shift · 1st shift</figcaption></figure><figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/teno-attendance/create-shift-2.jpg" alt="Create Shift form for 2nd Shift" loading="lazy"></div><figcaption>Create shift · 2nd shift, same rules, different timing</figcaption></figure></div>
+ <figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/teno-attendance/shift-list.jpg" alt="Teacher attendance shift list with four shifts" loading="lazy"></div><figcaption>Shift list · one school, several timings</figcaption></figure>
+ <dl class="t-dec-grid">
+ <div><dt>Problem</dt><dd>Admins re-judged every teacher's day by hand.</dd></div>
+ <div><dt>Decision</dt><dd>One Create Shift form captures shift name, weekly off, holiday calendar, in and out time, late-mark time, half-day threshold and the teachers in it. Late mark and half day carry info tooltips, because these terms vary from school to school.</dd></div>
+ <div class="why"><dt>Why it matters</dt><dd>The admin decides once; the system classifies every day after that.</dd></div>
+ </dl>
+ </div>
+ <div class="t-dec">
+ <div class="t-dec-head"><span class="t-dec-n">Decision 2</span><h3>Holidays as reusable calendars</h3></div>
+ <figure class="cs-figure np-photo "><div class="np-ink"><img src="../assets/teno-attendance/holiday-calendar.jpg" alt="Set Holiday Calendar screen" loading="lazy"></div><figcaption>Set holiday calendar</figcaption></figure>
+ <dl class="t-dec-grid">
+ <div><dt>Problem</dt><dd>Holidays differ by state and by school, and re-entering them per shift would be tedious.</dd></div>
+ <div><dt>Decision</dt><dd>A Set Holiday Calendar screen with a pre-filled list of public holidays the admin ticks, plus custom “other holidays” with name and dates. Each saved calendar can be attached to any shift.</dd></div>
+ <div class="why"><dt>Why it matters</dt><dd>A Maharashtra school and a Bihar school use the same tool without workarounds.</dd></div>
+ </dl>
+ </div>
+ <div class="t-dec">
+ <div class="t-dec-head"><span class="t-dec-n">Decision 3</span><h3>Approvals by type, in bulk</h3></div>
+ <figure class="cs-figure np-photo "><div class="np-ink"><img src="../assets/teno-attendance/approvals.jpg" alt="Approvals screen with Daily, Regularisation and Leave tabs" loading="lazy"></div><figcaption>Approvals, Daily tab, filtered by shift</figcaption></figure>
+ <dl class="t-dec-grid">
+ <div><dt>Problem</dt><dd>The admin's queue mixed everyday check-ins with exceptions.</dd></div>
+ <div><dt>Decision</dt><dd>Approvals split into Daily, Regularisation and Leave tabs, filtered by shift. Each row shows date, name, in, out and total hours already calculated; the admin multi-selects and approves or rejects with one comment.</dd></div>
+ <div class="why"><dt>Why it matters</dt><dd>Routine check-ins are cleared in a few clicks, so attention goes to the exceptions.</dd></div>
+ </dl>
+ </div>
+ <div class="t-dec">
+ <div class="t-dec-head"><span class="t-dec-n">Decision 4</span><h3>Self attendance on the teacher's phone</h3></div>
+ 
+ <dl class="t-dec-grid">
+ <div><dt>Problem</dt><dd>Teachers forgot to report, and there was no way to fix a missed day.</dd></div>
+ <div><dt>Decision</dt><dd>A Self Attendance screen with one-tap mark in and out, a month calendar showing each day's status (present, absent, weekly off, pending, holiday), a reminder when a day isn't marked, regularisation for missed marks, and leave requests with balances.</dd></div>
+ <div class="why"><dt>Why it matters</dt><dd>Suvidha's “I forgot” becomes a notification and a two-step fix, not an evening phone call.</dd></div>
+ </dl>
+ </div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">07</span>Testing with real admins</h2>
+ <p>I tested the hi-fi prototype (v5) with <strong>6 school admins</strong> in unmoderated, recorded sessions. The task: <em>create a shift and add teachers to it.</em></p>
+ <div class="n-stats">
+ <div><b>6:32</b><span>Avg. time on task · range 4:13–8:29</span></div>
+ <div><b class="red">11%</b><span>Avg. misclick rate · range 5–17%</span></div>
+ <div><b>6/6</b><span>Sessions recorded on Chrome</span></div>
+ </div>
+ <figure class="cs-figure np-photo "><div class="np-ink"><img src="../assets/teno-attendance/test-dashboard.jpg" alt="Usability test dashboard with six recorded sessions, participant names redacted" loading="lazy"></div><figcaption>Test dashboard · Six recorded sessions of the admin flow; participant names redacted</figcaption></figure>
+ <p style="margin-top:18px">The sessions surfaced six issues, <mark class="hl">most of them about real school policy the form couldn't yet express</mark>:</p>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>What we saw</th><th>What it told us</th><th>Design response</th></tr></thead><tbody><tr><th>Some schools apply a sandwich-leave policy</th><td>Leave rules vary by school</td><td><strong class='t-resp'>Sandwich-rule toggle in shift setup</strong></td></tr><tr><th>Some schools give alternate Saturdays off</th><td>Weekly off isn't always weekly</td><td><strong class='t-resp'>1st/3rd or 2nd/4th Saturday option</strong></td></tr><tr><th>Admins were unsure what Half day and Late mark meant</th><td>Labels assumed shared definitions</td><td><strong class='t-resp'>Info tooltips with a worked example</strong></td></tr><tr><th>Admins wanted to limit where teachers can mark from</th><td>Trust needs a location check</td><td><strong class='t-resp'>Geofence / location on each record</strong></td></tr><tr><th>Notification wording felt unclear</th><td>Messages read as system-speak</td><td><strong class='t-resp'>Copy rewritten in plain language</strong></td></tr><tr><th>Too many colour legends in the approvals table</th><td>Colour was overloaded</td><td><strong class='t-resp'>Legend trimmed to fewer statuses</strong></td></tr></tbody></table></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">08</span>Outcome</h2>
+ <p>Teacher Attendance moved schools from <strong>WhatsApp-and-Excel</strong> to <strong>in-app, self-marked attendance with rule-based approval</strong>.</p>
+ <div class="t-ba">
+ <div class="before"><span>Before</span><p>WhatsApp + Excel</p><small>Teachers texted times; admins typed them up and did the maths</small></div>
+ <div class="arrow" aria-hidden="true">→</div>
+ <div class="after"><span>After</span><p>In-app, self-marked</p><small>Teachers mark in one tap; admins approve by rule, in bulk</small></div>
+ </div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">09</span>What I'd do differently</h2>
+ <div class="n-cards three">
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg></span><span class="n-num">01</span><h4>Test policy before pixels</h4><p>Four of the six test findings were school policies, sandwich leave, alternate Saturdays, location rules, not UI problems. A policy survey before wireframes would have caught them a round earlier.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><span class="n-num">02</span><h4>Rules as configuration, not fields</h4><p>Each new policy became another form field. A rules-builder pattern would scale better as schools add edge cases.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="n-num">03</span><h4>Measure from day one</h4><p>I'd set baseline metrics, admin minutes per day, missed marks per week, before launch, so the impact story writes itself.</p></div>
+ </div>
+ <p class="cs-tagline" style="margin-top:34px">Rules set once. <span>Attendance that runs itself.</span></p>
+ </section>
+
+ </div>
 </main>
 
+<div class="wrap cs-next">
+ <a href="smart-glasses.html">
+ <div><div class="lab">Next story →</div><div class="nm">B by Lenskart — AI Smart Glasses</div></div>
+ <span class="cs-back" style="margin:0"><span class="arr" style="transform:none">→</span></span>
+ </a>
+</div>
+
 <footer class="foot">
-  <div class="wrap foot-inner">
-    <span class="foot-meta">Animish Kolge · The Design Chronicle · © 2026</span>
-    <div class="foot-links">
-      <a href="mailto:animish.kolge@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/animish-kolge">LinkedIn</a>
-      <a href="../index.html">Home</a>
-    </div>
-  </div>
+ <div class="wrap foot-inner">
+ <span class="foot-meta">Animish Kolge · The Design Chronicle · © 2026</span>
+ <div class="foot-links">
+ <a href="mailto:animish.kolge@gmail.com">Email</a>
+ <a href="https://www.linkedin.com/in/animish-kolge">LinkedIn</a>
+ <a href="../index.html">Home</a>
+ </div>
+ </div>
 </footer>
 
 <script src="../script.js"></script>
+<script src="../cs-enhance.js"></script>
 </body>
 </html>

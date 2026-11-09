@@ -3,39 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Animish Kolge · Design Leader — The Design Chronicle</title>
-<meta name="description" content="Animish Kolge — design leader with 8+ years across product, AI and AR/VR/XR. Leads design for B by Lenskart AI smart glasses at AjnaLens; builds design teams, systems and operations from 0 to 1.">
+<title>Animish Kolge · Design Manager — B2B SaaS, Enterprise &amp; AI Products</title>
+<meta name="description" content="Design Manager with 8+ years across B2B SaaS, enterprise banking, fintech and edtech. Led a 9-member design team and built AI-powered design workflows. HCI, IIT Bombay · M.Des, MIT Institute of Design.">
 <meta name="author" content="Animish Kolge">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Design Chronicle — Animish Kolge">
-<meta property="og:title" content="Animish Kolge · Design Leader">
-<meta property="og:description" content="Design leader — product, AI and AR/VR/XR. Builds the whole design function, not just the screens.">
+<meta property="og:title" content="Animish Kolge · Design Manager — B2B SaaS, Enterprise &amp; AI Products">
+<meta property="og:description" content="Design Manager with 8+ years across B2B SaaS, enterprise banking, fintech and edtech. Led a 9-member design team and built AI-powered design workflows. HCI, IIT Bombay · M.Des, MIT Institute of Design.">
 <meta property="og:url" content="https://www.animishdesign.com">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Animish Kolge · Design Leader">
-<meta name="twitter:description" content="Design leader — product, AI and AR/VR/XR. Builds the whole design function, not just the screens.">
+<meta name="twitter:title" content="Animish Kolge · Design Manager — B2B SaaS, Enterprise &amp; AI Products">
+<meta name="twitter:description" content="Design Manager with 8+ years across B2B SaaS, enterprise banking, fintech and edtech. Led a 9-member design team and built AI-powered design workflows. HCI, IIT Bombay · M.Des, MIT Institute of Design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Archivo:wght@500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="cover.css">
 </head>
 <body id="top">
 
-<a class="skip" href="#edition">Skip to work</a>
-
 <!-- reading progress ink bar -->
 <div class="progress" id="progress" aria-hidden="true"></div>
-
-<!-- floating hover-peek preview (built by JS) -->
-<div class="peek" id="peek" aria-hidden="true">
-  <div class="peek-clip">
-    <div class="peek-kicker" id="peekKicker"></div>
-    <div class="peek-title" id="peekTitle"></div>
-    <div class="peek-photo" id="peekPhoto"><span class="peek-metric" id="peekMetric"></span></div>
-    <div class="peek-foot" id="peekFoot">Read the full story →</div>
-  </div>
-</div>
 
 <!-- MASTHEAD BAR -->
 <div class="topbar">
@@ -49,12 +38,16 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand">Animish&nbsp;Kolge <span class="num">Design Leader</span></a>
+    <a href="#top" class="brand">Animish&nbsp;Kolge <span class="num">Design Manager</span></a>
+    <button class="radio-btn" id="radioBtn" type="button" aria-pressed="false" aria-label="Play the bulletin" title="Bulletin sound">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 9 L17 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><rect x="2.5" y="9" width="19" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="15" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 13h5M6 16h5M6 19h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <span class="radio-lab">Bulletin <em class="radio-state">Play</em></span>
+    </button>
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
     <div class="nav-links" id="navLinks">
       <a href="#edition">Work</a>
-      <a href="#profile">Profile</a>
-      <a href="#toolkit">Toolkit</a>
+      <a href="#ai">AI</a>
+      <a href="#leadership">How I lead</a>
       <a href="#desk">Contact</a>
       <a href="assets/Animish_Kolge_Resume.pdf" target="_blank" rel="noopener" class="nav-cta">Résumé</a>
     </div>
@@ -63,7 +56,8 @@
 
 <!-- NAMEPLATE -->
 <header class="plate wrap">
-  <p class="strap load-1">Reporting eight seasons of product design, teams built, and systems shipped</p>
+  <canvas class="plate-dots" id="plateDots" aria-hidden="true"></canvas>
+  <p class="strap load-1">Reporting eight seasons of SaaS, enterprise and AI product design</p>
   <div class="plate-grid">
     <div>
       <div class="deva load-1">डिझाईन · नेतृत्व · नवोन्मेष</div>
@@ -75,49 +69,50 @@
     <img class="plate-portrait photo load-2" id="platePortrait" src="assets/plate-portrait.jpg" alt="Animish Kolge" loading="eager">
   </div>
   <hr class="plate-rule draw">
-  <div class="plate-role load-3">Design Leader · AI &amp; AR/VR/XR Products · Design Systems &amp; Operations</div>
+  <div class="plate-role load-3">Design Manager · B2B SaaS &amp; Enterprise Products · AI-Powered Design</div>
   <div class="plate-contact load-3">
     <span>Mumbai, India</span>
     <a href="mailto:animish.kolge@gmail.com">animish.kolge@gmail.com</a>
     <a href="https://www.linkedin.com/in/animish-kolge">linkedin.com/in/animish-kolge</a>
-    <span>animishdesign.com</span>
+    <a href="assets/Animish_Kolge_Resume.pdf" target="_blank" rel="noopener" class="plate-cv">Résumé (PDF)</a>
   </div>
 </header>
 
 <!-- LIVE TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="tickerTrack">
-    <span class="ti"><b>Latest</b> — Leading design for B by Lenskart AI smart glasses</span>
-    <span class="ti">Built a 9-person design org from 0→1</span>
-    <span class="ti">Saathi mutual funds — 75% closure, ₹1 Cr deployed</span>
-    <span class="ti">Teno grown 5,000 → 7,000 schools</span>
-    <span class="ti">20,000 Saathi transactions a day, up from ~5,000</span>
-    <span class="ti">AI-driven design system with custom Claude skills</span>
+    <span class="ti"><b>Latest</b> — Design lead for B by Lenskart AI smart glasses</span>
+    <span class="ti">Enterprise banking SaaS at Infosys Finacle</span>
+    <span class="ti">AI design workflows built with custom Claude skills</span>
+    <span class="ti">Saathi daily transactions up 4×, ~5,000 → 20,000</span>
+    <span class="ti">HCI, IIT Bombay · M.Des, MIT Institute of Design</span>
+    <span class="ti">Open to Design Manager, Principal Designer &amp; Head of Design roles</span>
   </div>
 </div>
 
 <main>
 
-<!-- LEAD STORY : PROFILE -->
+<!-- LEAD STORY -->
 <section class="section wrap" id="profile">
   <div class="lead-grid">
     <article class="lead reveal">
-      <div class="kicker">Lead Story — Design Leadership · Product Strategy · AI · AR/VR/XR</div>
-      <h2>Builds the whole design function, not just the screens.</h2>
-      <p class="byline">By the desk · Mumbai · Currently at AjnaLens</p>
-      <p class="drop">A design leader with <strong>8+ years</strong> building consumer products and smart AI glasses — taking products from 0 to 1, scaling design teams, and driving product strategy with executive stakeholders across fintech, AI and AR/VR/XR.</p>
-      <p>I set up design functions where none exist — team, design ops, processes and governance — while staying close to the product. Currently I lead design for <strong>AI-powered smart glasses (B by Lenskart)</strong> at AjnaLens, including the cross-platform companion app built with Lenskart, and I run the company's <strong>AI-driven design system</strong>.</p>
-      <p>Before AjnaLens: Design Manager at <strong>PayNearby</strong>, and Lead Experience Designer at <strong>Propellum</strong> and <strong>Infosys Digital</strong>. M.Des from MIT Institute of Design; B.Sc. IT from Mumbai University.</p>
+      <div class="kicker">Lead Story — B2B SaaS · Enterprise · AI</div>
+      <h2 class="type-head" id="typeHead">I simplify complex SaaS products and lead AI-powered design teams.</h2>
+      <p class="byline">By the desk · Mumbai · Most recently Design Lead at AjnaLens</p>
+      <p class="drop">For <strong>8+ years</strong> I've designed and scaled complex digital products across <strong>B2B SaaS, enterprise banking, fintech and education</strong> — from Infosys Finacle's banking platform to multi-role school software and AI-powered smart glasses.</p>
+      <p>At <strong>AjnaLens</strong> I built and led a <strong>9-member design team</strong>, set up design governance and operations, and introduced AI-powered design workflows. Before that: Design Manager at <strong>PayNearby</strong>, and Lead Experience Designer at <strong>Propellum</strong> and <strong>Infosys Digital</strong>.</p>
+      <div class="lead-actions">
+        <a href="#edition" class="btn btn-primary magnetic">View selected work <span class="arr">→</span></a>
+        <a href="#desk" class="btn btn-ghost magnetic">Get in touch</a>
+      </div>
     </article>
 
     <aside class="numbers reveal" aria-label="By the numbers">
       <h3>By the Numbers</h3>
-      <div class="num-row"><div class="v"><span class="count" data-to="8" data-suffix="+">0</span></div><div class="k">Years in design</div></div>
-      <div class="num-row"><div class="v"><span class="count" data-to="9">0</span></div><div class="k">Designers led</div></div>
-      <div class="num-row"><div class="v">0→1</div><div class="k">Design orgs built</div></div>
-      <div class="num-row"><div class="v"><span class="count" data-to="20" data-suffix="K">0</span></div><div class="k">Saathi transactions / day <small>up from ~5,000</small></div></div>
-      <div class="num-row"><div class="v"><span class="count" data-to="7" data-suffix="K">0</span></div><div class="k">Teno schools <small>grown 5,000 → 7,000</small></div></div>
-      <div class="num-row"><div class="v"><span class="count" data-to="12" data-prefix="+" data-suffix="%">0</span></div><div class="k">Booking growth</div></div>
+      <div class="num-row"><div class="v"><span class="count" data-to="8" data-suffix="+">8+</span></div><div class="k">Years shipping product</div></div>
+      <div class="num-row"><div class="v"><span class="count" data-to="9" data-suffix="">9</span></div><div class="k">Designers led <small>AjnaLens, across four product lines</small></div></div>
+      <div class="num-row"><div class="v"><span class="count" data-to="20" data-suffix="K">20K</span></div><div class="k">Saathi transactions / day <small>up 4× from ~5,000</small></div></div>
+      <div class="num-row"><div class="v"><span class="count" data-to="7" data-suffix="K">7K</span></div><div class="k">Schools on Teno <small>up 40% from 5,000</small></div></div>
     </aside>
   </div>
 </section>
@@ -127,19 +122,18 @@
   <div class="sec-head reveal">
     <h2 class="sec-title">The Portfolio <em>Edition</em></h2>
     <span class="line"></span>
-    <span class="eyebrow plain">Selected Work · hover to peek</span>
+    <span class="eyebrow plain">Selected Work</span>
   </div>
 
   <div class="editions" id="editions">
 
     <!-- 01 -->
-    <a class="entry reveal" href="projects/smart-glasses.html" data-kicker="Marquee — AI &amp; Wearables" data-title="B by Lenskart — AI Smart Glasses"
-       data-metric="Live" data-accent="#A6322A">
+    <a class="entry reveal" href="projects/smart-glasses.html" data-kicker="Marquee — AI &amp; Wearables" data-title="B by Lenskart — AI Smart Glasses" data-metric="Live" data-accent="#A6322A">
       <div class="entry-no">No.<b>01</b></div>
       <div class="entry-main">
         <div class="entry-kicker">Marquee — AI &amp; Wearables <span class="tag">AjnaLens · Lenskart</span></div>
         <h3 class="entry-title"><span>B by Lenskart — AI Smart Glasses</span></h3>
-        <p class="entry-dek">Led experience &amp; interaction design for India's first AI-powered smart glasses — the companion app, the on-lens interaction model, and the conversational AI experience.</p>
+        <p class="entry-dek">Led the companion app, interaction model and AI conversation experience for India's first AI-powered smart glasses — designed from the ground up, including error handling and the system design behind it.</p>
         <span class="entry-go">Read case study <span class="arr">→</span></span>
         <div class="entry-sublinks">
           <span class="sub-label">Inside this project</span>
@@ -152,48 +146,63 @@
     </a>
 
     <!-- 02 -->
-    <a class="entry reveal" href="projects/teno-principal.html"
-       data-kicker="EdTech — Product" data-title="Principal Dashboard"
-       data-metric="Live" data-accent="#A6322A">
+    <a class="entry reveal" href="projects/teno-principal.html" data-kicker="B2B SaaS — EdTech" data-title="Teno — Principal Dashboard" data-metric="Live" data-accent="#A6322A">
       <div class="entry-no">No.<b>02</b></div>
       <div class="entry-main">
-        <div class="entry-kicker">EdTech — Product <span class="tag">Teno · Propellum</span></div>
-        <h3 class="entry-title"><span>Principal Dashboard</span></h3>
-        <p class="entry-dek">A command centre for school principals to monitor every school activity and data stream in one place — part of the work that grew Teno from 5,000 to 7,000 schools.</p>
+        <div class="entry-kicker">B2B SaaS — EdTech <span class="tag">Teno · Propellum</span></div>
+        <h3 class="entry-title"><span>Teno — Principal Dashboard</span></h3>
+        <p class="entry-dek">A command centre for principals inside Teno, a multi-role school platform for admins, teachers, parents and students — part of the work that grew Teno from 5,000 to 7,000 schools.</p>
         <span class="entry-go">Read case study <span class="arr">→</span></span>
       </div>
       <div class="entry-result"><div class="entry-metric">Live</div><div class="entry-metric-label">7K schools reached</div></div>
     </a>
 
     <!-- 03 -->
-    <div class="entry entry-soon reveal" data-kicker="Fintech — Financial Inclusion" data-title="Mutual Fund Investment Journey" data-accent="#A6322A">
+    <a class="entry reveal" href="projects/teno-attendance.html" data-kicker="B2B SaaS — EdTech" data-title="Teno — Teacher Attendance" data-metric="Live" data-accent="#A6322A">
       <div class="entry-no">No.<b>03</b></div>
       <div class="entry-main">
-        <div class="entry-kicker">Fintech — Financial Inclusion <span class="tag">PayNearby · Saathi</span></div>
-        <h3 class="entry-title"><span>Mutual Fund Investment Journey</span></h3>
-        <p class="entry-dek">Saathi's first mutual fund journey for tier 2/3 India — bilingual Hindi/English, self-serve and agent-assisted, built for first-time investors.</p>
-        <span class="entry-go soon">Coming soon</span>
+        <div class="entry-kicker">B2B SaaS — EdTech <span class="tag">Teno · Propellum</span></div>
+        <h3 class="entry-title"><span>Teno — Teacher Attendance</span></h3>
+        <p class="entry-dek">From WhatsApp pings to a shift engine: self-marked attendance for teachers and rule-based approvals for admins, researched with 48 interviews across 8 schools.</p>
+        <span class="entry-go">Read case study <span class="arr">→</span></span>
+        <div class="entry-sublinks">
+          <span class="sub-label">Inside this project</span>
+          <span class="sub-tag">Admin dashboard</span>
+          <span class="sub-tag">Teacher mobile flow</span>
+        </div>
       </div>
-      <div class="entry-result"><div class="entry-metric ink">Soon</div><div class="entry-metric-label">in progress</div></div>
-    </div>
+      <div class="entry-result"><div class="entry-metric">Live</div><div class="entry-metric-label">48 interviews</div></div>
+    </a>
 
     <!-- 04 -->
-    <div class="entry entry-soon reveal" data-kicker="EdTech — Product" data-title="Teacher Attendance" data-accent="#1B1915">
+    <div class="entry entry-static reveal" data-kicker="Fintech — Growth" data-title="Saathi — UPI &amp; Mutual Fund Journey" data-metric="4×" data-accent="#A6322A">
       <div class="entry-no">No.<b>04</b></div>
       <div class="entry-main">
-        <div class="entry-kicker">EdTech — Product <span class="tag">Teno · Propellum</span></div>
-        <h3 class="entry-title"><span>Teacher Attendance</span></h3>
-        <p class="entry-dek">An attendance &amp; leave system for teachers with an admin approval flow — a daily chore reduced to a couple of taps.</p>
-        <span class="entry-go soon">Coming soon</span>
+        <div class="entry-kicker">Fintech — Growth <span class="tag">PayNearby · Saathi</span></div>
+        <h3 class="entry-title"><span>Saathi — UPI &amp; Mutual Fund Journey</span></h3>
+        <p class="entry-dek">Introduced UPI payments to drive product-led growth, and designed Saathi's first bilingual Hindi/English mutual fund journey for first-time investors in tier 2/3 India.</p>
+        <span class="entry-go req">Walkthrough on request</span>
       </div>
-      <div class="entry-result"><div class="entry-metric ink">Soon</div><div class="entry-metric-label">in progress</div></div>
+      <div class="entry-result"><div class="entry-metric">4×</div><div class="entry-metric-label">daily transactions</div></div>
+    </div>
+
+    <!-- 05 -->
+    <div class="entry entry-static reveal" data-kicker="B2B SaaS — Enterprise Banking" data-title="Infosys Finacle" data-metric="SaaS" data-accent="#A6322A">
+      <div class="entry-no">No.<b>05</b></div>
+      <div class="entry-main">
+        <div class="entry-kicker">B2B SaaS — Enterprise Banking <span class="tag">Infosys Digital</span></div>
+        <h3 class="entry-title"><span>Infosys Finacle</span></h3>
+        <p class="entry-dek">Brought user research and design-system thinking to complex enterprise banking workflows on Infosys' SaaS banking platform.</p>
+        <span class="entry-go req">Walkthrough on request</span>
+      </div>
+      <div class="entry-result"><div class="entry-metric">SaaS</div><div class="entry-metric-label">enterprise · web</div></div>
     </div>
 
   </div>
 </section>
 
 <!-- PROFILE / ABOUT with photo -->
-<section class="section wrap">
+<section class="section wrap" id="editor">
   <div class="sec-head reveal">
     <h2 class="sec-title">The <em>Editor</em></h2>
     <span class="line"></span>
@@ -213,70 +222,52 @@
   </div>
 </section>
 
-</main>
-
-<!-- THE TOOLKIT -->
-<section class="toolkit" id="toolkit">
-  <div class="toolkit-inner wrap">
-    <div class="sec-head reveal">
-      <h2 class="sec-title">The Toolkit</h2>
-      <span class="line"></span>
-      <span class="eyebrow">Full Directory</span>
-    </div>
-    <div class="tk-grid reveal">
-      <div class="tk-cell">
-        <h3>Leadership</h3>
-        <ul class="tk-list">
-          <li>Design leadership <span class="v">core</span></li>
-          <li>Design ops &amp; governance <span class="v">0→1</span></li>
-          <li>Team scaling &amp; hiring <span class="v">9 led</span></li>
-          <li>Product strategy <span class="v">exec</span></li>
-          <li>Roadmap &amp; OKRs <span class="v">owned</span></li>
-        </ul>
-      </div>
-      <div class="tk-cell">
-        <h3>UX &amp; Research</h3>
-        <ul class="tk-list">
-          <li>User flows <span class="v">core</span></li>
-          <li>Information architecture <span class="v">core</span></li>
-          <li>System design <span class="v">core</span></li>
-          <li>Conversational &amp; AI UX <span class="v">specialist</span></li>
-          <li>Journey mapping <span class="v">core</span></li>
-        </ul>
-      </div>
-      <div class="tk-cell">
-        <h3>AI &amp; Emerging Tech</h3>
-        <ul class="tk-list">
-          <li>AI-driven workflows <span class="v">custom</span></li>
-          <li>Design systems at scale <span class="v">built</span></li>
-          <li>Prompt engineering <span class="v">Claude skills</span></li>
-          <li>AR / VR / XR <span class="v">wearables</span></li>
-        </ul>
-      </div>
-      <div class="tk-cell">
-        <h3>Tools</h3>
-        <ul class="tk-list">
-          <li>Figma <span class="v">daily</span></li>
-          <li>Design handover &amp; audit <span class="v">automated</span></li>
-          <li>Prototyping <span class="v">hi-fi</span></li>
-          <li>Agile / Lean UX <span class="v">practice</span></li>
-        </ul>
-      </div>
+<!-- DESIGNING WITH AI -->
+<section class="section wrap" id="ai">
+  <div class="sec-head reveal">
+    <h2 class="sec-title">Designing with <em>AI</em></h2>
+    <span class="line"></span>
+    <span class="eyebrow plain">The AI Desk</span>
+  </div>
+  <p class="hl-intro reveal">AI is built into how my team designs — it speeds up the slow parts, and every output is still reviewed by a designer.</p>
+  <div class="ai-desk reveal" id="aiDesk">
+    <div class="ai-tabs" role="tablist" aria-label="AI design workflows"><button class="ai-tab on" role="tab" id="aitab0" aria-controls="aipanel0" aria-selected="true" type="button"><span class="ai-n">01</span><span class="ai-tab-txt"><span class="hl-lab">From PRD to flows</span><b>Requirements to UX flows in days.</b></span><span class="ai-bar"></span></button><button class="ai-tab" role="tab" id="aitab1" aria-controls="aipanel1" aria-selected="false" type="button"><span class="ai-n">02</span><span class="ai-tab-txt"><span class="hl-lab">Prompt to UI</span><b>Screens from our own components.</b></span><span class="ai-bar"></span></button><button class="ai-tab" role="tab" id="aitab2" aria-controls="aipanel2" aria-selected="false" type="button"><span class="ai-n">03</span><span class="ai-tab-txt"><span class="hl-lab">Automated audits</span><b>Quality checks that run themselves.</b></span><span class="ai-bar"></span></button><button class="ai-tab" role="tab" id="aitab3" aria-controls="aipanel3" aria-selected="false" type="button"><span class="ai-n">04</span><span class="ai-tab-txt"><span class="hl-lab">Smarter handover</span><b>One document for dev and QA.</b></span><span class="ai-bar"></span></button></div>
+    <div class="ai-screen">
+      <div class="ai-screen-top"><span class="ai-dot"></span><span class="ai-dot"></span><span class="ai-dot"></span><span class="ai-title">The AI Desk · wire</span><span class="ai-live">● Live</span></div>
+      <div class="ai-panels"><div class="ai-panel" role="tabpanel" id="aipanel0" aria-labelledby="aitab0"><span class="hl-lab">From PRD to flows</span><h3>Requirements to UX flows in days.</h3><p class="ai-out">Custom Claude skills turn a PRD into use cases, user flows and edge cases: feature specs went from 1–2 weeks to 3–4 days.</p></div><div class="ai-panel" role="tabpanel" id="aipanel1" aria-labelledby="aitab1"><span class="hl-lab">Prompt to UI</span><h3>Screens from our own components.</h3><p class="ai-out">Prompt-to-UI generation built on the team's component library, so new screens start on-brand and consistent.</p></div><div class="ai-panel" role="tabpanel" id="aipanel2" aria-labelledby="aitab2"><span class="hl-lab">Automated audits</span><h3>Quality checks that run themselves.</h3><p class="ai-out">Automated design audits catch inconsistencies against the design system before handoff.</p></div><div class="ai-panel" role="tabpanel" id="aipanel3" aria-labelledby="aitab3"><span class="hl-lab">Smarter handover</span><h3>One document for dev and QA.</h3><p class="ai-out">AI-assisted handover covering use cases, edge cases and error handling per component, which doubles as QA's test-case source.</p></div></div>
     </div>
   </div>
 </section>
 
+<!-- HOW I LEAD DESIGN -->
+<section class="section wrap" id="leadership">
+  <div class="sec-head reveal">
+    <h2 class="sec-title">How I <em>lead design</em></h2>
+    <span class="line"></span>
+    <span class="eyebrow plain">People · Business · Cost · Process</span>
+  </div>
+  <div class="hl-grid lead-cards reveal" id="leadCards">
+      <div class="hl-item" tabindex="0"><span class="hl-lab">People</span><h3>Build teams that grow.</h3><p>I own hiring, mentorship and performance for my team, with a KRA/KPI framework tied to company OKRs and each designer's career growth. I also helped set up and lead the Infosys Design Studio.</p></div>
+      <div class="hl-item" tabindex="0"><span class="hl-lab">Business</span><h3>Design that moves numbers.</h3><p>I tie design to business goals. At PayNearby, daily train and flight bookings rose 12%, and the gold-loan and mutual-fund journey went from 18 steps to 12.</p></div>
+      <div class="hl-item" tabindex="0"><span class="hl-lab">Cost</span><h3>More output, leaner team.</h3><p>My team absorbed a workload that would normally need two more junior designers, through better work planning and AI — and I manage AI token usage for maximum output at minimum cost.</p></div>
+      <div class="hl-item" tabindex="0"><span class="hl-lab">Process</span><h3>Systems that scale quality.</h3><p>I set up design governance, a design operations model and a design maturity model with regular audits, cutting handoff friction and rework between design and engineering.</p></div>
+  </div>
+</section>
+
+</main>
+
 <!-- CONTACT DESK -->
 <section class="section wrap" id="desk">
   <div class="desk reveal">
-    <span class="eyebrow">Now Taking Enquiries for the Next Season</span>
+    <span class="eyebrow">Now Taking Enquiries</span>
     <h2>Write to the <em>desk.</em></h2>
-    <p>Open to Design Manager, Principal, Head of Design and Design Director roles.</p>
+    <p>Open to Design Manager, Principal Designer, Head of Design and Design Director roles.</p>
     <div class="desk-actions">
       <a href="mailto:animish.kolge@gmail.com" class="btn btn-primary magnetic">Email the desk <span class="arr">→</span></a>
+      <a href="assets/Animish_Kolge_Resume.pdf" download class="btn btn-ghost magnetic">Download Resume</a>
       <a href="https://www.linkedin.com/in/animish-kolge" class="btn btn-ghost magnetic">LinkedIn</a>
-      <a href="assets/Animish_Kolge_Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost magnetic">Résumé</a>
     </div>
+    <p class="desk-meta"><a href="mailto:animish.kolge@gmail.com">animish.kolge@gmail.com</a> · <a href="tel:+919606772288">+91 96067 72288</a></p>
   </div>
 </section>
 
@@ -287,12 +278,13 @@
     <div class="foot-links">
       <a href="mailto:animish.kolge@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/animish-kolge">LinkedIn</a>
-      <a href="tel:+919606772288">+91 96067 72288</a>
     </div>
   </div>
 </footer>
 
 <script src="script.js"></script>
 <script src="index.js"></script>
+<script src="cover.js"></script>
+<script src="ai-home.js"></script>
 </body>
 </html>
