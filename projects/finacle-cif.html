@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infosys Finacle CIF, Rebuilding a 17-Year-Old Banking System · Animish Kolge</title>
+<meta name="description" content="Re-imagining customer onboarding (CIF) in Infosys Finacle core banking SaaS, and building the design system the whole Finacle revamp would run on.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Design Chronicle, Animish Kolge">
+<meta property="og:title" content="Infosys Finacle CIF · Animish Kolge">
+<meta property="og:description" content="Re-imagining customer onboarding (CIF) in Infosys Finacle core banking SaaS, and building the design system the whole Finacle revamp would run on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Archivo:wght@500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../casestudy.css">
+</head>
+<body class="cs-clean">
+<a class="skip" href="#csbody">Skip to content</a>
+
+<nav class="nav">
+ <div class="nav-inner">
+ <a href="../index.html" class="brand">Animish&nbsp;Kolge <span class="num">Design Manager</span></a>
+ <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+ <div class="nav-links" id="navLinks">
+ <a href="../index.html#edition">Work</a>
+ <a href="../index.html#ai">AI</a>
+ <a href="../index.html#leadership">How I lead</a>
+ <a href="../index.html#desk">Contact</a>
+ <a href="../assets/Animish_Kolge_Resume.pdf" target="_blank" rel="noopener" class="nav-cta">Résumé</a>
+ </div>
+ </div>
+</nav>
+
+<header class="cs-hero">
+ <div class="wrap">
+ <a href="../index.html#edition" class="cs-back"><span class="arr">←</span> Back to the edition</a>
+ <div class="cs-round"><span>Featured Story</span><span class="flag fast">B2B SaaS · Core banking · 2019</span><span class="flag">Infosys Finacle</span></div>
+ <h1 class="cs-title">Rebuilding a 17-year-old banking system, starting with one form</h1>
+ <p class="cs-lede">I helped re-imagine customer onboarding (CIF) in <b>Infosys Finacle</b>, and built the <b>design system</b> the whole Finacle revamp would run on.</p>
+ <div class="cs-board">
+ <div class="cs-board-cell"><div class="k">Role</div><div class="v cyan" style="font-size:1.05rem">Junior Designer<small>CIF team · design system owner</small></div></div>
+ <div class="cs-board-cell"><div class="k">Team</div><div class="v" style="font-size:1.05rem">4 designers<small>Animish, Neha, Sachin, Thomas</small></div></div>
+ <div class="cs-board-cell"><div class="k">Timeline</div><div class="v" style="font-size:1.05rem">From Feb 2019<small>Infosys Digital</small></div></div>
+ <div class="cs-board-cell"><div class="k">Methods</div><div class="v" style="font-size:1.05rem">Audit → UI<small>Heuristics · workshops · personas · wireframes · design system</small></div></div>
+ </div>
+ <div class="n-stats">
+ <div><b>7→3</b><span>Steps to create a customer record</span></div>
+ <div><b class="red">10→6 min</b><span>To create a CIF, 40% faster</span></div>
+ <div><b>~28</b><span>Components in the Finacle design system</span></div>
+ </div>
+ <figure class="cs-figure" style="margin-top:28px"><div class="fc-banner"><img src="../assets/finacle/banner-finacle-suite.jpg" alt="Infosys Finacle Suite banner showing the new Create CIF screens: duplication check, customer details and the documents repository" loading="eager"></div><figcaption>The new Create CIF, built on the Finacle design system</figcaption></figure>
+ </div>
+</header>
+ <aside class="tldr wrap" aria-label="Case study summary">
+ <div class="tldr-top"><span class="tldr-tag">Quick tea</span><span class="tldr-sub">The whole story in 60 seconds</span><a class="tldr-more" href="#csbody">Read the full story ↓</a></div>
+ <div class="tldr-grid">
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5"/><path d="M12 16.5v.2"/></svg>Problem</span><p>Finacle's CIF module, where every bank relationship begins, was built in 2002 and had never had a UX review: dense, code-labelled and inconsistent.</p></div>
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M8.5 11.5L7 21l5-2.5 5 2.5-1.5-9.5"/></svg>My role</span><p>Junior Designer in a team of four on the CIF revamp, then picked to own the Finacle design system.</p></div>
+ <div class="tldr-cell"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Key decisions</span><ol><li>Audit before designing: 5 use cases against Nielsen's 10 heuristics, 30+ issues</li><li>Verify duplicates first, then fill only what's needed</li><li>Fix the cause with a design system, not screen by screen</li></ol></div>
+ <div class="tldr-cell out"><span class="tldr-k"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Outcome</span><p>Create CIF from 7 steps to 3 · 10 → 6 min per CIF, 40% faster · ~28 design-system components</p></div>
+ </div>
+ </aside>
+
+<main class="wrap">
+ <div class="cs-body" id="csbody">
+
+ <section class="cs-block">
+ <h2><span class="n">01</span>17 years of features, zero UX reviews</h2>
+ <p>CIF, the <strong>Customer Information File</strong>, is where every bank relationship begins. Finacle's CIF module was built in 2002 and had <mark class="hl">never had a UX review since</mark>.</p>
+ <p>New features kept getting bolted on without rethinking the whole. The result was a dense, code-labelled, inconsistent interface that bank staff had to <em>memorise</em> rather than understand.</p>
+ <div class="n-callout red"><span class="n-callout-lab">The brief</span><p>Finacle wanted a new UI for the entire product. CIF onboarding was the starting point: <strong>if it worked here, the thinking could scale to every module.</strong></p></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">02</span>Two tracks, running in parallel</h2>
+ <p>Redesigning CIF and building the design system ran side by side, so every new screen was built on the shared language as it formed.</p>
+ <div class="fc-tracks">
+ <div class="fc-track"><span class="fc-track-lab">CIF redesign</span><ol class="t-flow"><li>Heuristic evaluation <small>Step 1</small></li><li>Stakeholder workshop <small>Step 2</small></li><li>Personas &amp; journeys <small>Step 3</small></li><li>Wireframes <small>Step 4</small></li><li class="end">Final UI <small>Step 5</small></li></ol></div>
+ <div class="fc-track par"><span class="fc-track-lab">In parallel</span><div class="fc-par-bar">Finacle design system</div></div>
+ </div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">03</span>Learning the system by auditing it</h2>
+ <p><span class="fc-step">Step 1 · Heuristic evaluation</span> We scored <strong>five use cases</strong> against <strong>Nielsen's 10 heuristics plus 12 content parameters</strong>. It taught us the CIF flow and surfaced <mark class="hl">30+ issues</mark>.</p>
+ 
+ <div class="n-cards two">
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5"/><path d="M12 16.5v.2"/></svg></span><h4>Create CIF</h4><p>Uncategorised fields, red CTAs at the top, a hidden duplicate check, a 3-click date picker.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h4>Task Box</h4><p>Cards on cards, code-style labels, statuses hard to tell apart.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span><h4>360° Dashboard</h4><p>No section hierarchy; cards that looked clickable but weren't.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><h4>Dialogs &amp; Search</h4><p>Pop-ups far from their trigger; recent and live results mixed together.</p></div>
+ </div>
+ <div class="n-callout red"><span class="n-callout-lab">The root cause</span><p>No information architecture, no navigation model, no shared design language. Our report recommended <strong>a dashboard, a new IA, a new navigation model, and a design system</strong>.</p></div>
+ <div class="fc-he">
+ <figure class="cs-figure fc-he-thumb"><img src="../assets/finacle/audit-create-cif.jpg" alt="Heuristic evaluation of Create CIF with seven numbered issues mapped to Nielsen's heuristics" loading="lazy"></figure>
+ <div class="fc-he-body">
+ <span class="fc-link-k">Heuristic evaluation · Use case 2</span>
+ <h4>Create CIF, audited</h4>
+ <p>Seven issues on one screen, each mapped to a Nielsen heuristic: misleading tabs, cramped fields, red CTAs at the top, a hidden duplication check, and more. Click the thumbnail to enlarge.</p>
+ <a class="fc-link fc-link-inline" href="../assets/finacle/docs/Finacle_CIF_Heuristic_Evaluation.pdf" target="_blank" rel="noopener"><span class="fc-link-k">Full document</span><span class="fc-link-t">View the full heuristic evaluation report <b>→</b></span><span class="fc-link-s">🔒 Password protected · opens in a new tab</span></a>
+ </div>
+ </div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">04</span>From a 5-year vision to one priority order</h2>
+ <p><span class="fc-step">Step 2 · Stakeholder workshop</span> Finacle is one SaaS product configured for many banks, so we couldn't design for a single client. We ran a deep-dive workshop with product stakeholders to agree what the platform must become, <strong>before drawing a screen</strong>.</p>
+ <h3 class="cs-sub">Agenda of the workshop</h3>
+ <ol class="t-flow"><li>Capturing requirements <small>Activity 1</small></li><li>Capturing pain points <small>Activity 2</small></li><li>User personas <small>Activity 3</small></li><li class="end">Future mapping <small>Activity 4</small></li></ol>
+
+ <h3 class="cs-sub">Activity 1 · Capturing requirements</h3>
+ <p>Product stakeholders were asked to envision the product <strong>five years from now</strong>: how it should bring value to their customers and make its mark in the market. About an hour of discussion produced <strong>23 keywords</strong> we believed would be instrumental in re-imagining the product. In the next meeting they were prioritised into primary, secondary and tertiary.</p>
+ <figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/finacle/workshop-requirements.jpg" alt="Capturing requirements with product stakeholders, workshop photo blurred for privacy" loading="lazy"></div><figcaption>Capturing requirements with product stakeholders · <span class="fc-blur-note">blurred for privacy</span></figcaption></figure>
+ <ol class="fc-kw"><li><span>01</span>Moving CIF to CRM</li><li><span>02</span>Relationships</li><li><span>03</span>System of engagement</li><li><span>04</span>Relevant (real time)</li><li><span>05</span>Responsible system</li><li><span>06</span>Open</li><li><span>07</span>Intelligent (analytics, ML, AI)</li><li><span>08</span>Conversational</li><li><span>09</span>Reduce customer churn</li><li><span>10</span>Real-time / relevant data record</li><li><span>11</span>Robust and simple</li><li><span>12</span>Compatibility</li><li><span>13</span>Quick and responsive</li><li><span>14</span>Inclusive of demographics</li><li><span>15</span>Language</li><li><span>16</span>Extensible to other domains</li><li><span>17</span>Global banking product</li><li><span>18</span>Configurability</li><li><span>19</span>Personalization</li><li><span>20</span>Intuitive, dynamic</li><li><span>21</span>Quick edit / view</li><li><span>22</span>Analytics / intelligence</li><li><span>23</span>Risk profile / assisting</li></ol>
+
+ <h3 class="cs-sub">Grouping keywords into themes</h3>
+ <p>In a follow-up session the 23 keywords were sorted into four groups. Grouping made it easier to call out the important keywords and carry them into the requirement matrix.</p>
+ <figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/finacle/workshop-grouping.jpg" alt="Grouping the keywords, workshop photo blurred for privacy" loading="lazy"></div><figcaption>Grouping the keywords · <span class="fc-blur-note">blurred for privacy</span></figcaption></figure>
+ <div class="fc-groups"><div class="fc-group"><div class="fc-group-h"><b>Usability</b><span>6</span></div><ul><li>Simple</li><li>Quick and responsive</li><li>Intuitive</li><li>Configurable</li><li>Personalization</li><li>Support data privacy</li></ul></div><div class="fc-group"><div class="fc-group-h"><b>Functionality</b><span>3</span></div><ul><li>Relationship</li><li>Data accuracy</li><li>Regulation and compliance</li></ul></div><div class="fc-group"><div class="fc-group-h"><b>Performance</b><span>1</span></div><ul><li>Robust</li></ul></div><div class="fc-group"><div class="fc-group-h"><b>Analytics</b><span>1</span></div><ul><li>Intelligent</li></ul></div></div>
+
+ <h3 class="cs-sub">Prioritisation: the requirement matrix</h3>
+ <div class="fc-split">
+ <div><p>The requirement matrix captures every requirement proposed by stakeholders, and its traceability, in one document. It maps user requirements to test cases, so <strong>no functionality is missed while designing</strong>.</p><p>Plotting the primary requirements on the matrix gave us this hierarchy.</p><figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/finacle/workshop-matrix.jpg" alt="Matrix plotted from the identified requirements, workshop photo blurred for privacy" loading="lazy"></div><figcaption>Matrix plotted from the identified requirements · <span class="fc-blur-note">blurred for privacy</span></figcaption></figure></div>
+ <div class="fc-rank-box"><span class="fc-p-k">Hierarchy from the matrix</span><ol class="fc-rank"><li>Data accuracy</li><li>Regulations &amp; compliance</li><li class=hl>Configuration</li><li>Relationship</li><li>Personalization</li><li>Support data privacy</li><li>Quick &amp; responsive</li><li>Simple</li><li>Intuitive</li><li>Intelligent</li></ol></div>
+ </div>
+
+ <h3 class="cs-sub">Activity 2 · Capturing pain points</h3>
+ <p>Stakeholders voiced the obstacles they would face in reaching their vision for the product. The discussion gave us a clearer view of what stood between the team and its goals.</p>
+ <figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/finacle/workshop-painpoints.jpg" alt="Capturing pain points, workshop photo blurred for privacy" loading="lazy"></div><figcaption>Capturing pain points · <span class="fc-blur-note">blurred for privacy</span></figcaption></figure>
+ <div class="n-cards five">
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h4a2 2 0 1 1 4 0h4v4a2 2 0 1 1 0 4v4H4z"/></svg></span><span class="n-num">01</span><h4>Incomplete &amp; inconsistent</h4><p>The product had grown piece by piece, with gaps and contradictions.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span><span class="n-num">02</span><h4>Current architecture</h4><p>Technology limits on what could change, and how fast.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.3c2 .8 3.5 2.8 3.5 5.7"/></svg></span><span class="n-num">03</span><h4>People's mindset</h4><p>A service culture used to working around the system.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="n-num">04</span><h4>Market insights</h4><p>Little view of what competitors and customers expected.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span><span class="n-num">05</span><h4>No user research or A/B testing</h4><p>Decisions made without evidence from real users.</p></div>
+ </div>
+ <div class="n-callout"><span class="n-callout-lab">Why this matters for a SaaS product</span><p>One codebase serves many banks and many roles. Ranking <strong>configuration third</strong>, right after accuracy and compliance, told us the design had to <strong>flex per bank and per role</strong> instead of being built for one client.</p></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">05</span>18 roles use CIF every day</h2>
+ <p><span class="fc-step">Step 3 · User personas</span> This activity helped us build empathy with target users, focus on their world, share insights with other stakeholders, and gauge our designs' effectiveness through their eyes. Together with stakeholders we listed <strong>every role that uses CIF</strong> in daily work, then highlighted the four that use it most.</p>
+ <figure class="cs-figure np-photo"><div class="np-ink"><img src="../assets/finacle/workshop-personas.jpg" alt="Building personas with stakeholders, workshop photo blurred for privacy" loading="lazy"></div><figcaption>Building personas with stakeholders · <span class="fc-blur-note">blurred for privacy</span></figcaption></figure>
+ <p class="fc-roles-lab">All 18 roles · <span>primary roles highlighted</span></p><ul class="cs-chips fc-roles"><li>Global Relationship Manager</li><li class=deep>Relationship Manager</li><li>Branch Manager</li><li class=deep>Teller</li><li>Ops Manager</li><li class=deep>Back Ops</li><li>Officer</li><li class=deep>Customer Service Representative</li><li>Lead</li><li>Team</li><li>Admin</li><li>Senior Teller</li><li>Branch Operation Manager</li><li>Cluster Manager</li><li>Regional Manager</li><li>Zonal Manager</li><li>Auditors</li><li>Compliance Officers</li></ul>
+ <p>We went deep on the two who use CIF most differently: a <strong>field-facing Relationship Manager</strong> and a <strong>call-centre Customer Service Rep</strong>.</p>
+ <article class="fc-persona">
+ <div class="fc-p-top"><div class="fc-p-img fc-img"><img src="../assets/finacle/persona-rm.jpg" alt="Engraved portrait of Madhav, the Relationship Manager persona" loading="lazy"></div><div><span class="n-tag">Relationship Manager</span><h4>Madhav L.</h4><p class="fc-p-meta">MBA graduate · Age 30 · Works 10–11 hours</p></div></div>
+ <div class="fc-p-cols"><div><span class="fc-p-k">Apps used</span><ul><li>Social media</li><li>Fintech apps</li><li>ET Money</li><li>News</li></ul></div><div><span class="fc-p-k">Challenges</span><ul><li>Insufficient, inefficient applications for business operations</li><li>Outdated applications</li><li>Not open to spending much time on learning</li><li>Dealing with fraudulent customers</li><li>Can't send confirmation to customers</li><li>Expects the system to be more intuitive and suggestive</li></ul></div><div><span class="fc-p-k">Skill set</span><ul><li>Product and market trend awareness</li><li>Convincing ability</li><li>Ability to forecast</li><li>Tech-savvy; gives IT feedback on better solutions</li></ul></div><div><span class="fc-p-k">Targets</span><ul><li>Manage relationships; cross-sell and up-sell</li><li>Zero complaints from customers</li><li>Stay in touch and suggest accordingly</li><li>Track loan reports and customer KYCs on time</li><li>Manage appointments; grow the portfolio</li></ul></div></div>
+ </article>
+ <article class="fc-persona">
+ <div class="fc-p-top"><div class="fc-p-img fc-img"><img src="../assets/finacle/persona-csr.jpg" alt="Engraved portrait of the Customer Service Representative persona wearing a headset" loading="lazy"></div><div><span class="n-tag">Customer Service Representative</span><h4>Contact-centre agent</h4><p class="fc-p-meta">12th pass · Age 28 · 8-hour shifts</p></div></div>
+ <div class="fc-p-cols"><div><span class="fc-p-k">Apps used</span><ul><li>Call-centre application (CTI)</li><li>IP telephony system</li><li>Core banking (limited access)</li><li>Social media, email</li></ul></div><div><span class="fc-p-k">Challenges</span><ul><li>Handling angry customers</li><li>System inefficiency</li><li>Lack of business process knowledge</li><li>Unfriendly work environment</li></ul></div><div><span class="fc-p-k">Skill set</span><ul><li>Good at communication</li><li>Good knowledge of e-banking applications</li><li>Aware of banking processes to guide customers</li></ul></div><div><span class="fc-p-k">Targets</span><ul><li>Minimal time to solve a customer problem</li><li>Solve the maximum number of queries a day</li><li>Least hold time for customers</li><li>Satisfy every customer</li></ul></div></div>
+ </article>
+ <div class="fc-days"><div class="fc-day"><h4>A day in the shoes of a Relationship Manager</h4><ol class="fc-tl"><li><time>8:00 AM</time><span>Wakes up and checks the day's schedule</span></li><li class=work><time>9:00–10:00</time><span>Sets out to meet customers before they leave for work</span></li><li class=work><time>10:30–11:00</time><span>Reaches office; status call with the team</span></li><li class=work><time>11:00–1:30</time><span>Solves complaints by phone and in person; tracks actionables and portfolio</span></li><li><time>1:30–2:00</time><span>Lunch</span></li><li class=work><time>2:00–6:00</time><span>Meets customers and tracks targets</span></li><li class=work><time>6:00–6:30</time><span>Status call; notes next day's appointments; market study</span></li><li><time>8:00 PM</time><span>Home, personal time</span></li></ol><div class="fc-day-img fc-img"><img src="../assets/finacle/journey-rm.jpg" alt="Illustrated day in the shoes of a Relationship Manager, from 6 AM to 8 PM" loading="lazy"></div></div><div class="fc-day"><h4>A day in the shoes of a Customer Service Rep</h4><ol class="fc-tl"><li><time>8:00 AM</time><span>Gets up and sets out for work</span></li><li class=work><time>10:00 AM</time><span>Status-call meeting with the team</span></li><li class=work><time>10:30–1:30</time><span>Takes calls and emails through the CTI app; must solve each in minimum time</span></li><li><time>1:30–2:00</time><span>Lunch</span></li><li class=work><time>2:00–6:00</time><span>Continues servicing requests routed by IVR</span></li><li class=work><time>6:00–6:30</time><span>Documents the day; reports customers addressed and unresolved issues</span></li><li><time>8:00 PM</time><span>Home, personal time</span></li></ol><div class="fc-day-img fc-img"><img src="../assets/finacle/journey-csr.jpg" alt="Illustrated day in the shoes of a Customer Service Representative, from 6 AM to 8 PM" loading="lazy"></div></div></div>
+ <blockquote class="n-pull">One CIF had to serve both: guided for the novice, fast for the expert.</blockquote>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">06</span>Bankers don't have time to type</h2>
+ <p><span class="fc-step">Insights · Talking to real bankers</span> We combined three sources: the heuristic evaluation, stakeholder interviews, and <strong>conversations with bankers who use Finacle every day</strong>.</p>
+ <div class="n-cards three">
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="n-num">Source 1</span><h4>Heuristic evaluation</h4><p>Where the interface breaks usability and content rules.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.3c2 .8 3.5 2.8 3.5 5.7"/></svg></span><span class="n-num">Source 2</span><h4>Stakeholder interviews</h4><p>What the business needs and what opening an account really requires.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></span><span class="n-num">Source 3</span><h4>Banker conversations</h4><p>How people who open accounts daily actually work with Finacle.</p></div>
+ </div>
+ <div class="fc-observed"><span class="n-callout-lab">What we observed</span><ul>
+ <li>Bankers don't have time to enter lots of information.</li>
+ <li>The screens show unnecessary information; there are too many things on them.</li>
+ <li>The information architecture is missing: nothing tells the banker what matters first.</li>
+ </ul></div>
+ <h3 class="cs-sub">Three problems worth solving</h3>
+ <div class="n-cards three fc-probs">
+ <div class="n-card"><span class="n-tag">Problem 1</span><h4>Duplicates found only at the end</h4><p>The banker filled every field and pressed submit, and only then learned the customer already had an account. <mark class="hl">10–15 minutes, sometimes half an hour, wasted.</mark></p></div>
+ <div class="n-card"><span class="n-tag">Problem 2</span><h4>Too much information, no structure</h4><p>Unnecessary fields and no information architecture made a simple task feel heavy.</p></div>
+ <div class="n-card"><span class="n-tag">Problem 3</span><h4>Everything asked up front</h4><p>Extra details and documents were part of one long form, even when the account didn't need them yet.</p></div>
+ </div>
+ <div class="t-hmw"><span>Design goal</span><p>Minimise what the banker has to do, and keep the focus on <em>the information that matters</em>.</p></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">07</span>Verify first, then fill only what's needed</h2>
+ <p><span class="fc-step">Solution · The new flow</span> With stakeholders we split the journey in two: <strong>duplicate verification</strong>, then <strong>form filling</strong>.</p>
+ <div class="fc-flow" role="img" aria-label="New CIF flow. Part 1, duplicate verification: choose eKYC, scan or enter details, then check if the customer exists. If yes, show their details and no new account is needed. If no, start form filling. Part 2, form filling: personal details, address details, contact details and ID proof, plus optional Add a section and Add document. Then save as draft or preview, and finally save draft, assign to another department, or submit for verification, ending in account created.">
+ <div class="fc-part">
+ <div class="fc-part-h"><span>Part 1</span><b>Duplicate verification</b></div>
+ <p class="fc-flow-note">Choose one way to find the customer</p>
+ <div class="fc-row three"><div class="fc-box"><b>eKYC</b><small>Aadhaar, PAN + number</small></div><div class="fc-box"><b>Scan</b><small>Scan ID, auto-fill</small></div><div class="fc-box"><b>Enter details</b><small>Type and search</small></div></div>
+ <div class="fc-arrow">↓</div>
+ <div class="fc-decision"><span>Does the customer already exist?</span></div>
+ <div class="fc-row two"><div class="fc-box yes"><span class="fc-tag">Yes, match found</span><b>Show the customer's details</b><small>No new account needed.</small></div><div class="fc-box no"><span class="fc-tag">No match</span><b>Start the form-filling journey →</b></div></div>
+ </div>
+ <div class="fc-part">
+ <div class="fc-part-h"><span>Part 2</span><b>Form filling</b></div>
+ <p class="fc-flow-note">Only what opening an account needs</p>
+ <div class="fc-row two"><div class="fc-box core"><b>Personal details</b></div><div class="fc-box core"><b>Address details</b></div><div class="fc-box core"><b>Contact details</b></div><div class="fc-box core"><b>ID proof</b></div></div>
+ <div class="fc-row two"><div class="fc-box opt"><b>+ Add a section</b><small>Only if needed, e.g. home loan</small></div><div class="fc-box opt"><b>+ Add document</b><small>Own page, upload all at once</small></div></div>
+ <div class="fc-arrow">↓</div>
+ <div class="fc-row two"><div class="fc-box"><b>Save as draft</b></div><div class="fc-box"><b>Preview</b><small>read-only</small></div></div>
+ <div class="fc-arrow">↓</div>
+ <div class="fc-row three"><div class="fc-box"><b>Save draft</b><small>finish later</small></div><div class="fc-box"><b>Assign to</b><small>e.g. home loan dept</small></div><div class="fc-box"><b>Submit</b><small>for verification</small></div></div>
+ <div class="fc-arrow">↓</div>
+ <div class="fc-end">Account created</div>
+ </div>
+ </div>
+ <h3 class="cs-sub">Problem → solution in the UI</h3>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>Problem</th><th>Solution in the UI</th></tr></thead><tbody>
+ <tr><th>Duplicate found only after filling the whole form</th><td><strong class='t-resp'>Duplicate verification is the first step</strong>, with three ways to search: eKYC, scan or enter details</td></tr>
+ <tr><th>Too much unnecessary information</th><td><strong class='t-resp'>Form trimmed to four core sections</strong> agreed with stakeholders</td></tr>
+ <tr><th>Extra details asked up front</th><td><strong class='t-resp'>"Add a section"</strong> adds extra information only when the case needs it</td></tr>
+ <tr><th>Documents tied to form filling</th><td><strong class='t-resp'>A separate "Add document" page</strong>; upload everything at once, whenever ready</td></tr>
+ <tr><th>No way to pause or hand off</th><td><strong class='t-resp'>Save as draft, read-only Preview, Assign</strong> to another department, or <strong class='t-resp'>Submit</strong> for verification</td></tr>
+ </tbody></table></div>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">08</span>One overloaded screen became three guided steps</h2>
+ <p><span class="fc-step">Step 4 · Wireframes</span> <strong>Duplication Check → Customer Details → Preview.</strong> Every change traces back to an audit finding.</p>
+ <div class="cs-table-wrap"><table class="cs-table"><thead><tr><th>Before</th><th>After</th></tr></thead><tbody><tr><th>Mandatory duplicate check hidden among equal buttons</th><td><strong class='t-resp'>Duplication check is step 1:</strong> eKYC, scan or enter details</td></tr><tr><th>One long scrolling form, no grouping</th><td><strong class='t-resp'>Sections with a side nav</strong> counting mandatory fields left</td></tr><tr><th>Customer type buried in a dropdown</th><td><strong class='t-resp'>Visible content switcher</strong> for customer type</td></tr><tr><th>No guidance for document upload</th><td><strong class='t-resp'>Drag-and-drop upload</strong> plus a document repository panel</td></tr><tr><th>Red CTAs at the top, read as warnings</th><td><strong class='t-resp'>Primary actions at the bottom:</strong> Assign To, Submit</td></tr></tbody></table></div>
+ <figure class="cs-figure fc-wf"><div class="fc-wf-frame" tabindex="0" aria-label="Wireframe of the Duplication Check step: choose eKYC, Scan and Retrieve or Enter Manually, then run the duplication check, scrollable"><img src="../assets/finacle/wf-duplication.jpg" alt="Wireframe of the Duplication Check step: choose eKYC, Scan and Retrieve or Enter Manually, then run the duplication check" loading="lazy"></div><figcaption>Step 1: check for duplicates by eKYC, scan or entering details</figcaption></figure>
+ <figure class="cs-figure fc-wf fc-scroll"><div class="fc-wf-frame" tabindex="0" aria-label="Wireframe of the CIF form: customer type switcher, personal, address and contact details, with Save as draft, Assign to and Submit for verification, scrollable"><img src="../assets/finacle/wf-customer-details.jpg" alt="Wireframe of the CIF form: customer type switcher, personal, address and contact details, with Save as draft, Assign to and Submit for verification" loading="lazy"></div><span class="fc-scroll-hint" aria-hidden="true">Scroll ↓</span><figcaption>Step 2: sectioned form with mandatory-field count</figcaption></figure>
+ <figure class="cs-figure fc-wf fc-scroll"><div class="fc-wf-frame" tabindex="0" aria-label="Wireframe of the CIF form with the Documents Repository side panel open, showing identity, address and tax proof, scrollable"><img src="../assets/finacle/wf-doc-repository.jpg" alt="Wireframe of the CIF form with the Documents Repository side panel open, showing identity, address and tax proof" loading="lazy"></div><span class="fc-scroll-hint" aria-hidden="true">Scroll ↓</span><figcaption>Documents uploaded once, viewed from a side panel</figcaption></figure>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">09</span>The new Create CIF, built on the design system</h2>
+ <p><span class="fc-step">Step 5 · Final UI</span> High-fidelity screens using Finacle's new components, colour and type.</p>
+ <figure class="cs-figure fc-ui"><div class="fc-wf-frame"><img src="../assets/finacle/ui-duplication.jpg" alt="Final Duplication Check screen: E-KYC, Scan and Retrieve or Enter Manually tabs, PAN card upload and Check for duplicates" loading="lazy"></div><figcaption>Step 1 · Duplication Check</figcaption></figure>
+ <figure class="cs-figure fc-ui"><div class="fc-wf-frame"><img src="../assets/finacle/ui-customer-details.jpg" alt="Final Customer Details screen: customer type switcher, personal details, ID photo and Submit for verification" loading="lazy"></div><figcaption>Step 2 · Customer Details</figcaption></figure>
+ <figure class="cs-figure fc-ui"><div class="fc-wf-frame"><img src="../assets/finacle/ui-add-section.jpg" alt="Final screen with the Sections panel open to add or remove form sections" loading="lazy"></div><figcaption>Step 3 · Add section details</figcaption></figure>
+ <figure class="cs-figure fc-ui"><div class="fc-wf-frame"><img src="../assets/finacle/ui-upload-document.jpg" alt="Final screen with the Documents Repository panel: ID type, uploaded files, document number and expiry warning" loading="lazy"></div><figcaption>Step 4 · Upload documents</figcaption></figure>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">10</span>Fixing the cause, not the screens</h2>
+ <p>Inconsistency was the root problem, so I was <strong>picked from the CIF team to build a design system for all of Finacle</strong>. Built on Material principles, flexible enough to carry each bank's own brand.</p>
+ <div class="fc-ds">
+ <div class="fc-ds-item"><span class="fc-p-k">Colour</span><div class="fc-swatch"><i style="background:#276EF1" title="#276EF1"></i><i style="background:#DF2D2D" title="#DF2D2D"></i><i style="background:#F5BC5C" title="#F5BC5C"></i><i style="background:#4C9D21" title="#4C9D21"></i></div><p><b>Finacle Blue #276EF1</b>, tints checked against WCAG AA. Light and dark palettes.</p></div>
+ <div class="fc-ds-item"><span class="fc-p-k">Typography</span><div class="fc-big" style="font-family:Lato,Archivo,sans-serif">Aa</div><p><b>Lato</b>, specified from Headline 1 (96px) down to Overline.</p></div>
+ <div class="fc-ds-item"><span class="fc-p-k">Grid &amp; elevation</span><div class="fc-big">12 col</div><p>30px gutters, XS to XL breakpoints, 1440px max. Elevation scale 0–24.</p></div>
+ <div class="fc-ds-item"><span class="fc-p-k">Components</span><div class="fc-big red">~28</div><p>Anatomy, states and usage over <b>169 pages</b>: buttons, data tables, text fields, uploaders and more.</p></div>
+ </div>
+ <figure class="cs-figure fc-ds-cover"><div class="fc-wf-frame"><img src="../assets/finacle/design-system-cover.jpg" alt="Cover of the Finacle Design System document, created by Infosys XD" loading="lazy"></div><figcaption>The Finacle Design System: 169 pages of colour, type, grid and components</figcaption></figure>
+ <a class="fc-link" href="../assets/finacle/docs/Finacle_Design_System.pdf" target="_blank" rel="noopener"><span class="fc-link-k">Full document · 169 pages</span><span class="fc-link-t">View the full Finacle design system <b>→</b></span><span class="fc-link-s">🔒 Password protected · opens in a new tab</span></a>
+ </section>
+
+ <section class="cs-block">
+ <h2><span class="n">11</span>Faster onboarding, one shared language</h2>
+ <div class="n-stats">
+ <div><b>7→3</b><span>Steps in Create CIF</span></div>
+ <div><b class="red">40%</b><span>Faster: 10 min down to 6 min per CIF</span></div>
+ <div><b class="fc-word">No long scroll</b><span>Short, sectioned steps instead</span></div>
+ </div>
+ <h3 class="cs-sub">What I learned</h3>
+ <div class="n-cards three">
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="n-num">01</span><h4>Audit before you design</h4><p>In enterprise software, a heuristic audit is the fastest way into a system nobody can explain end to end.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span class="n-num">02</span><h4>Align before you draw</h4><p>A requirement matrix turns opinions into a priority order the whole team can design against.</p></div>
+ <div class="n-card has-ico"><span class="n-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5L12 12l9-4.5M12 12v9"/></svg></span><span class="n-num">03</span><h4>Systems scale, screens don't</h4><p>Fixing screens one by one never ends. A design system fixes the cause.</p></div>
+ </div>
+ <p class="fc-nda">Work shown under NDA. Details simplified.</p>
+ </section>
+
+ </div>
+</main>
+
+<div class="wrap cs-next">
+ <a href="smart-glasses.html">
+ <div><div class="lab">Next story →</div><div class="nm">B by Lenskart — AI Smart Glasses</div></div>
+ <span class="cs-back" style="margin:0"><span class="arr" style="transform:none">→</span></span>
+ </a>
+</div>
+
+<footer class="foot">
+ <div class="wrap foot-inner">
+ <span class="foot-meta">Animish Kolge · The Design Chronicle · © 2026</span>
+ <div class="foot-links">
+ <a href="mailto:animish.kolge@gmail.com">Email</a>
+ <a href="https://www.linkedin.com/in/animish-kolge">LinkedIn</a>
+ <a href="../index.html">Home</a>
+ </div>
+ </div>
+</footer>
+
+<script src="../script.js"></script>
+<script src="../cs-enhance.js"></script>
+</body>
+</html>
