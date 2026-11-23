@@ -77,8 +77,6 @@
  </aside>
 
 <main class="wrap">
-  <div class="cs-plate"><div class="ph">HERO IMAGE<small>B by Lenskart worn mid-walk — icons for music, AI, camera, call orbiting the frame</small></div></div>
-
   <div class="cs-body" id="csbody">
 
     <section class="cs-block">
@@ -94,7 +92,8 @@
       <p>The fast option was to keep fixing collisions as they surfaced as bugs. I pushed for the opposite: decide every one of them before launch.</p>
       <p>We listed every function on the device once and crossed it with every other. The result was a single interrupt matrix: <strong>27 running states against 29 incoming triggers, roughly 780 decisions.</strong> It spanned the AI modes (conversation, Meeting Mode, Live AI, Look &amp; Tell, calling, translation, music search), capture by button, voice and app, calls, media import, notifications, music gestures, and each stage of a firmware update.</p>
       <p>Every cell had to commit to two answers. What does the system do? And what does the person perceive? Most specs stop at the first question. The second is where this work earned its value, because <strong>a correct rule the user can't sense is indistinguishable from a bug.</strong></p>
-      <figure class="cs-figure"><div class="ph-fig">IMAGE — the full 27 × 29 matrix, softly blurred to convey scale</div><figcaption>Roughly 780 decisions, one source of truth.</figcaption></figure>
+      <figure class="cs-figure"><img src="../assets/parallel/interrupt-matrix.jpg" alt="The full interrupt matrix: what the system does and what the person perceives, for every incoming trigger against each active state — AI features, AI conversations, media capture, media import, calling and firmware update" loading="lazy" width="4200" height="5387" style="height:auto"><figcaption>Roughly 780 decisions, one source of truth. Tap to enlarge.</figcaption></figure>
+      <a class="fc-link" href="../assets/parallel/docs/B_by_Lenskart_Interrupt_Matrix.pdf" target="_blank" rel="noopener"><span class="fc-link-k">Full matrix · 6 tables · 122 rows</span><span class="fc-link-t">Read the interrupt matrix as tables <b>→</b></span><span class="fc-link-s">🔒 Password protected · opens in a new tab</span></a>
       <p>A simplified slice — each cell shows what happens when the column's request arrives while the row's activity is running:</p>
       <div class="cs-table-wrap">
         <table class="cs-table">
@@ -122,7 +121,6 @@
         <li><strong>Music and announcements.</strong> They always give way. Background downloads simply run alongside.</li>
       </ol>
       <p>One exception is intentional. During a firmware reboot, incoming calls fall back to the phone, because for those few seconds the glasses can't take them.</p>
-      <figure class="cs-figure"><div class="ph-fig">IMAGE — the five-tier priority ladder, Calls highlighted at the top</div></figure>
     </section>
 
     <section class="cs-block">
